@@ -68,8 +68,6 @@ answer = ''
 loop = 2
 for each in range(floor(sqrt(len(inquiry))*7)):
     xqc = word_id[loop]
-    if not xqc == 'punct':
-        answer += ' '
     t = nxt[word_id[loop]]
     failed = True
     iteration = 0
@@ -85,22 +83,15 @@ for each in range(floor(sqrt(len(inquiry))*7)):
         if iteration > 100:
             tt = t[0]
             failed = False
+    if not tt == 'punct':
+        answer += ' '
+    char = inquiry[(loop - 2) % len(inquiry)]
+    choices = words[tt]
+    word = choices[(alphabet(char) - 1) % len(choices)]
     if xqc == 'start':
-        try:
-            answer += words[tt][((len(words[tt])//2)*alphabet(inquiry[loop-2]))-1].title()
-        except:
-            try:
-                answer += words[tt][((len(words[tt])//2)*alphabet(inquiry[loop-2]))-20].title()
-            except:
-                answer += words[tt][(len(words[tt])//2)-1].title()
+        answer += word.title() 
     else:
-        try:
-            answer += words[tt][((len(words[tt])//2)*alphabet(inquiry[loop-2]))-1]
-        except:
-            try:
-                answer += words[tt][((len(words[tt])//2)*alphabet(inquiry[loop-2]))-20]
-            except:
-                answer += words[tt][(len(words[tt])//2)-1]
+        answer += word
     word_id.append(tt)
     loop += 1
 

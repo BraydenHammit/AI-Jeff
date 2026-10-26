@@ -1,7 +1,7 @@
 from math import floor, sqrt
 
 words = {
-    'self': ['me','I'],
+    'self': ['me','I','jeff'],
     'verb': ['hate','love','run','eat','murder'],
     'user': ['you'],
     'def': ['the'],
@@ -11,23 +11,46 @@ words = {
     'punct': ['.']
 }
 nxt = {
-    'self': 'verb',
-    'verb': 'plur noun',
+    'start': ['self','user','noun'],
+    'self': ['verb'],
+    'verb': ['plur noun','noun','user'],
     'user': 'punct',
     'def': '____________',
-    'noun': 'punct',
-    'plur noun': 'punct',
-    'adjective': 'noun',
-    'punct': '___________'
+    'noun': ['punct'],
+    'plur noun': ['punct'],
+    'adjective': ['noun','plur noun'],
+    'punct': ['self','user','noun']
 }
 inquiry = input('Request: ')
 
 
-word_id = []
+word_id = ['start']
 answer = ''
 loop = 0
 for each in range(floor(sqrt(len(inquiry)))):
     t = nxt[word_id[loop-1]]
-    answer += words[t][(len(words[t])//2)-1]
-    word_id.append(t)
+    failed = True
+    iteration = 0
+    while failed:
+        iteration += 1
+        try:
+            tt = t[round(sqrt(len(inquiry)//len(t)+iteration))]
+            failed = False
+        except IndexError: 
+            try:
+                tt = t[round(iteration//len(t))]
+            except IndexError: pass
+        if iteration > 100:
+            tt = t[0]
+            failed = False
+    if t == ['start']:
+        answer += words[tt][(len(words[tt])//2)-1].title()
+    else:
+        answer += words[tt][(len(words[tt])//2)-1]
+    answer += ' '
+    word_id.append(tt)
     loop += 1
+
+
+
+print(answer)

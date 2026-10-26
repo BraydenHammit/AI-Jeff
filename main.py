@@ -1,8 +1,8 @@
 from math import floor, sqrt
 
 words = {
-    'self': ['I','jeff'],
-    'verb': ['hate','love','run','eat','murder'],
+    'self': ['I','Jeff'],
+    'verb': ['hate','love','eat','murder'],
     'user': ['you'],
     'def': ['the'],
     'noun': ['cheese','cat', 'government'],

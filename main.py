@@ -3,8 +3,8 @@ from math import floor, sqrt
 words = {
     'self': ['I'],
     'self3rd': ['Jeff'],
-    'verb': ['hate','love','eat','murder'],
-    'verbS': ['hates','loves','eats','murders','owns'],
+    'verb': ['hate','love','eat','murder','own','ignore','sell'],
+    'verbS': ['hates','loves','eats','murders','owns','ignores','admires','bulit','cooks','sells'],
     'am': ['am'],
     'are': ['are'],
     'is': ['is'],
@@ -12,14 +12,18 @@ words = {
     'userS': ['you'],
     'a': ['a(n)'],
     'user': ['you'],
-    'noun': ['cheese','the cat','the government','basketball','football','China','the cheeseburger','McDonalds'],
+    'noun': ['cheese','basketball','football','China','McDonalds'],
+    'noun is': ['cheese','basketball','football','China','McDonalds','Breaking Bad'],
+    'the noun': ['the cat','the government','the cheeseburger'],
+    'the noun is': ['the cat','the government','the cheeseburger'],
     'plur noun': ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens'],
+    'plur noun are': ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens'],
     'adjective': ['green','ugly','handsome','pretty','juicy','sentient'],
     'adjectiveQ': ['green','ugly','handsome','pretty','juicy','sentient'],
     'punct': ['.','...','!','?']
 }
 nxt = {
-    'start': ['self','self3rd','userS','noun'],
+    'start': ['self','self3rd','userS','noun is','plur noun are','the noun is'],
     'self': ['verb','am'],
     'self3rd': ['verbS','is'],
     'am': ['adjective','noun','a'],
@@ -30,8 +34,12 @@ nxt = {
     'userS': ['punct','are'],
     'are': ['adjective','noun','a'],
     'noun': ['punct'],
+    'the noun': ['punct'],
+    'noun is': ['is'],
+    'the noun is': ['is'],
+    'plur noun are': ['are'],
     'plur noun': ['punct'],
-    'adjective': ['plur noun'],
+    'adjective': ['plur noun','punct'],
     'adjectiveQ': ['noun'],
     'punct': ['self','user','noun','self3rd'],
     'a': ['adjectiveQ']
@@ -77,15 +85,23 @@ def alphabet(value):
         except:
             return 1
 
+def iterate(num):
+    global nxt, words
+    for each in range(num):
+        for key in nxt:
+            nxt[key] = nxt[key][1:] + nxt[key][:1]
+        for key in words:
+            words[key] = words[key][1:] + words[key][:1]
+
 
 word_id = ['start','start','start']
 answer = ''
 loop = 2
-for each in range(floor(sqrt(len(inquiry))*7)):
+for each in range(floor(sqrt(len(inquiry))*37)):
     xqc = word_id[loop]
     t = nxt[word_id[loop]]
     failed = True
-    iteration = 0
+    iteration = loop // 2
     tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 5) % len(t)]
     if not tt == 'punct':
         answer += ' '
@@ -98,6 +114,7 @@ for each in range(floor(sqrt(len(inquiry))*7)):
         answer += word
     word_id.append(tt)
     loop += 1
+    iterate((round(loop % 5 // len(inquiry)))+1)
 
 if word_id[loop] == 'punct': finished = True
 else: finished = False
@@ -105,7 +122,7 @@ while finished == False:
     xqc = word_id[loop]
     t = nxt[word_id[loop]]
     failed = True
-    iteration = 0
+    iteration = loop // 2
     tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 5) % len(t)]
     if not tt == 'punct':
         answer += ' '
@@ -118,6 +135,7 @@ while finished == False:
         answer += word
     word_id.append(tt)
     loop += 1
+    iterate((round(loop % 5 // len(inquiry)))+1)
 
     if tt == 'punct': finished = True
 

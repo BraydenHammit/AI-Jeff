@@ -5,23 +5,24 @@ def run(entry,ans):
     if inquiry == '': inquiry = ' '
 
     adjectives = ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low','slippery','rough','vibrant','large','massive','Scottish','disgusting','vile','godlike','good','bad','evil','Jewish',
-                  'Islamic','Christian','smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','egotistical']
-    nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','emo','eclipse','famine','disease','[REDACTED]','idea','BitCoin']
+                  'Islamic','Christian','smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','emo','egotistical','unrealistic']
+    nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past']
-    plur_nouns = ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens', 'ideas', 'laws', 'taxes']
+    plur_nouns = ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens', 'ideas', 'laws', 'taxes', 'Jews']
 
     words = {
         'self': ['I'],
-        'people': ['Jeff','Obama','Trump','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','god','the Lord','the devil'],
+        'people': ['Jeff','Obama','Trump','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','god','the Lord','the devil','Joe Biden','your mother'],
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture'],
         'verbS': ['hates','loves','eats','murders','owns','ignores','admires','built','cooks','sells','tortures'],
         'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm'],
+        'going to': ['going to'],
         'am': ['am'],
         'are': ['are'],
         'is': ['is'],
-        'are': ['are'],
         'userS': ['you'],
         'bc': ['because'],
+        'from': ['from'],
         'a': ['a'],
         'user': ['you'],
         'noun': nouns,
@@ -38,19 +39,22 @@ def run(entry,ans):
         'start': ['self','people','userS','plur noun are','the noun is'],
         'self': ['verb','am'],
         'people': ['verbS','is'],
-        'am': ['AMadjective','a','the noun'],
-        'is': ['AMadjective','a','the noun'],
+        'am': ['AMadjective','a','the noun','from','going to'],
+        'is': ['AMadjective','a','the noun','from','going to'],
         'verb': ['plur noun','noun','adjective','the noun'],
         'verbS': ['plur noun','user','the noun'],
         'user': ['punct'],
         'userS': ['are'],
-        'are': ['AMadjective','a','the noun'],
+        'are': ['AMadjective','a','the noun','from','going to'],
         'noun': ['punct'],
         'the noun': ['punct'],
         'the noun is': ['is'],
         'plur noun are': ['are'],
         'plur noun': ['punct'],
         'adjective': ['plur noun'],
+        'from': ['locations'],
+        'going to': ['locations'],
+        'locations': ['punct'],
         'AMadjective': ['punct'],
         'adjectiveQ': ['noun'],
         'punct': ['self','people','userS','plur noun are','the noun is'],

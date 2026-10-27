@@ -9,19 +9,19 @@ def run(entry,ans):
                   'intruiging','zesty','illegal','ethical','unethical','legal','religous','non-religous','colorful','Aetheist','British','French','English','American','cheesy','wet','nasty','sticky','clean','rich','fancy','shiny','unintelligent',
                   'confused']
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
-             'penny','t-shirt','dinosaurs','turtle','killer','human','fish','feline','Aetheist']
+             'penny','t-shirt','dinosaurs','turtle','killer','human','fish','feline','Aetheist','rat']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','your mother']
-    plur_nouns = ['cats','snakes','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families']
+    plur_nouns = ['cats','rats','snakes','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families']
 
     words = {
         'self': ['I'],
-        'people': ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff',     'Obama','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','God',
+        'people': ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff',     'Obama','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','God','GTF','Cpj2020',
                    'Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Jeff the Killer','Technoblade','KTaylor Gaming'],
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture'],
         'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures'],
         'past verb': ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored'],
         'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End','the Overworld',
-                      'the Sift','the Roblox Headquarters','Mother Russia'],
+                      'the Sift','the Roblox Headquarters','Mother Russia','Georgia'],
         'going to': ['going to'],
         'am': ['am'],
         'are': ['are'],

@@ -1,35 +1,45 @@
 from math import floor, sqrt
+import platform as plt
+import os
+
+if plt.system() == 'Windows':
+    os.system('cls')
+else:
+    os.system('clear')
+    print('\n\n')
 
 words = {
     'self': ['I'],
-    'self3rd': ['Jeff'],
+    'people': ['Jeff','Obama','Trump','Heisenberg','Rick','Morty','Harry Potter'],
     'verb': ['hate','love','eat','murder','own','ignore','sell'],
-    'verbS': ['hates','loves','eats','murders','owns','ignores','admires','bulit','cooks','sells'],
+    'verbS': ['hates','loves','eats','murders','owns','ignores','admires','built','cooks','sells'],
     'am': ['am'],
     'are': ['are'],
     'is': ['is'],
     'are': ['are'],
     'userS': ['you'],
-    'a': ['a(n)'],
+    'bc': ['because'],
+    'a': ['a'],
     'user': ['you'],
-    'noun': ['cheese','basketball','football','China','McDonalds'],
+    'noun': ['cheese','basketball','football','China','McDonalds','Breaking Bad'],
     'noun is': ['cheese','basketball','football','China','McDonalds','Breaking Bad'],
-    'the noun': ['the cat','the government','the cheeseburger'],
-    'the noun is': ['the cat','the government','the cheeseburger'],
-    'plur noun': ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens'],
-    'plur noun are': ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens'],
-    'adjective': ['green','ugly','handsome','pretty','juicy','sentient'],
-    'adjectiveQ': ['green','ugly','handsome','pretty','juicy','sentient'],
+    'the noun': ['the cat','the government','the cheeseburger','the law'],
+    'the noun is': ['the cat','the government','the cheeseburger','the law'],
+    'plur noun': ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens','ideas','laws'],
+    'plur noun are': ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens','ideas','laws'],
+    'adjective': ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low'],
+    'adjectiveQ': ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low'],
+    'AMadjective': ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low'],
     'punct': ['.','...','!','?']
 }
 nxt = {
-    'start': ['self','self3rd','userS','noun is','plur noun are','the noun is'],
+    'start': ['self','people','userS','noun is','plur noun are','the noun is'],
     'self': ['verb','am'],
-    'self3rd': ['verbS','is'],
-    'am': ['adjective','noun','a'],
-    'is': ['adjective','noun','a'],
-    'verb': ['plur noun','noun','adjective'],
-    'verbS': ['plur noun','user'],
+    'people': ['verbS','is'],
+    'am': ['AMadjective','noun','a','the noun'],
+    'is': ['adjective','noun','a','the noun'],
+    'verb': ['plur noun','noun','adjective','the noun'],
+    'verbS': ['plur noun','user','the noun'],
     'user': ['punct'],
     'userS': ['punct','are'],
     'are': ['adjective','noun','a'],
@@ -39,12 +49,14 @@ nxt = {
     'the noun is': ['is'],
     'plur noun are': ['are'],
     'plur noun': ['punct'],
-    'adjective': ['plur noun','punct'],
+    'adjective': ['plur noun'],
+    'AMadjective': ['punct'],
     'adjectiveQ': ['noun'],
-    'punct': ['self','user','noun','self3rd'],
+    'punct': ['self','people','userS','noun is','plur noun are','the noun is'],
     'a': ['adjectiveQ']
 }
-inquiry = input('Request: ')
+inquiry = input('\033[35mRequest: \033[0m')
+print()
 
 def alphabet(value):
     alph = {
@@ -103,13 +115,15 @@ for each in range(floor(sqrt(len(inquiry))*37)):
     failed = True
     iteration = loop // 2
     tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 5) % len(t)]
-    if not tt == 'punct':
-        answer += ' '
     char = inquiry[(loop - 2) % len(inquiry)]
     choices = words[tt]
     word = choices[(alphabet(char) - 1) % len(choices)]
+    if xqc == 'a' and word[0].lower() in ('i','o','u','a','e'):
+        answer += 'n'
+    if not tt == 'punct':
+        answer += ' '
     if xqc in ('start','punct'):
-        answer += word.capitalize() 
+        answer += word[0].upper() + word[1:] 
     else:
         answer += word
     word_id.append(tt)
@@ -124,13 +138,15 @@ while finished == False:
     failed = True
     iteration = loop // 2
     tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 5) % len(t)]
-    if not tt == 'punct':
-        answer += ' '
     char = inquiry[(loop - 2) % len(inquiry)]
     choices = words[tt]
     word = choices[(alphabet(char) - 1) % len(choices)]
+    if xqc == 'a' and word[0].lower() in ('i','o','u','a','e'):
+        answer += 'n'
+    if not tt == 'punct':
+        answer += ' '
     if xqc in ('start','punct'):
-        answer += word.capitalize() 
+        answer += word[0].upper() + word[1:]
     else:
         answer += word
     word_id.append(tt)
@@ -139,4 +155,4 @@ while finished == False:
 
     if tt == 'punct': finished = True
 
-print(answer)
+print('\033[33m'+answer+'\n\033[0m')

@@ -5,14 +5,15 @@ def run(entry,ans):
     if inquiry == '': inquiry = ' '
 
     adjectives = ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low','slippery','rough','vibrant','large','massive','Scottish','disgusting','vile','godlike','good','bad','evil','Jewish',
-                  'Islamic','Christian','smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','emo','egotistical','unrealistic']
+                  'Islamic','Christian','smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','emo','egotistical','unrealistic','tasty','feminine','masculine','girly','manly','special',
+                  'intruiging']
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past']
     plur_nouns = ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens', 'ideas', 'laws', 'taxes', 'Jews', 'potatoes']
 
     words = {
         'self': ['I'],
-        'people': ['Jeff','Obama','Trump','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','god','the Lord','the devil','Joe Biden','your mother'],
+        'people': ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff',     'Obama','Trump','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','god','the Lord','the devil','Joe Biden','your mother','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who'],
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture'],
         'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures'],
         'past verb': ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored'],
@@ -34,7 +35,7 @@ def run(entry,ans):
         'adjective': adjectives,
         'adjectiveQ': adjectives,
         'AMadjective': adjectives,
-        'punct': ['.','...','!','?'],
+        'punct': ['.','.','.','.','.','.',    '...','!','?'],
         'com': [','],
         'conjunction': ['for','and','yet','so','because']
     }

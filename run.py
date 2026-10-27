@@ -41,8 +41,8 @@ def run(entry,ans):
     }
     nxt = {
         'start': ['self','people','userS','plur noun are','the noun is'],
-        'self': ['verb','am'],
-        'people': ['verbS','is'],
+        'self': ['verb','am','past verb'],
+        'people': ['verbS','is','past verb'],
         'am': ['AMadjective','a','the noun','from','going to'],
         'is': ['AMadjective','a','the noun','from','going to'],
         'verb': ['plur noun','noun','adjective','the noun'],
@@ -53,8 +53,8 @@ def run(entry,ans):
         'are': ['AMadjective','a','the noun','from','going to'],
         'noun': ['punct','punct','com'],
         'the noun': ['punct','punct','com'],
-        'the noun is': ['is'],
-        'plur noun are': ['are'],
+        'the noun is': ['is','past verb'],
+        'plur noun are': ['are','past verb'],
         'plur noun': ['punct','punct','com'],
         'adjective': ['plur noun'],
         'from': ['locations'],

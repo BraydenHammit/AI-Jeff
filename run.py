@@ -7,22 +7,24 @@ def run(entry):
     adjectives = ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low','slippery','rough','vibrant','large','massive','Scottish','disgusting','vile','godlike','good','bad','evil','pricey',
                   'smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','emo','egotistical','unrealistic','tasty','feminine','masculine','girly','manly','special','lonely','killer',
                   'intruiging','zesty','illegal','ethical','unethical','legal','religous','non-religous','colorful','Aetheist','British','French','English','American','cheesy','wet','nasty','sticky','clean','rich','fancy','shiny','unintelligent',
-                  'confused','slow','fast','sorry']
+                  'confused','slow','fast','sorry','gold','blue','yellow','pink','grey','brown','rainbow','clear','supportive','helpful','honest','dishonest','trustworthy','untrustworthy','loyal','universal']
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
-             'penny','t-shirt','dinosaurs','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin']
-    the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','your mother']
-    plur_nouns = ['cats','rats','snakes','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins']
+             'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg']
+    the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','your mother','the earth','the people','the One Ring','the Chosen One',
+                 'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence']
+    plur_nouns = ['cats','rats','snakes','cheese','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs']
 
     words = {
         'self': ['I'],
-        'people': ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff',     'Obama','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','God','GTF','Cpj2020','Verity','Jib','Notch','Mojang',
-                   'Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Jeff the Killer','Technoblade','KTaylor Gaming'],
+        'people': ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter',
+                   'some random guy','McDonalds','Sheldon1436','JosephGotG','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft',
+                   'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair'],
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill'],
         'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills'],
         'past verb': ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed'],
         'gverb': ['explode','die','dissapear','disintegrate','leave','apolagize'],
-        'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End','the Overworld',
-                      'the Sift','the Roblox Headquarters','Mother Russia','Georgia'],
+        'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
+                      'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park'],
         'going to': ['going to'],
         'am': ['am'],
         'are': ['are'],
@@ -49,7 +51,7 @@ def run(entry):
         'people': ['verbS','is','past verb'],
         'am': ['AMadjective','a','the noun','from','going to'],
         'is': ['AMadjective','a','the noun','from','going to'],
-        'verb': ['plur noun','noun','adjective','the noun'],
+        'verb': ['plur noun','a','adjective','the noun'],
         'verbS': ['plur noun','user','the noun'],
         'gverb': ['punct','punct','punct','com'],
         'past verb': ['plur noun','user','the noun','a'],
@@ -59,7 +61,7 @@ def run(entry):
         'noun': ['punct','punct','punct','com'],
         'the noun': ['punct','punct','punct','com'],
         'the noun is': ['is','past verb'],
-        'plur noun are': ['are','past verb','verb'],
+        'plur noun are': ['are','past verb'],
         'plur noun': ['punct','punct','punct','com'],
         'adjective': ['plur noun'],
         'from': ['locations'],
@@ -113,17 +115,20 @@ def run(entry):
                 return 1
 
     def iterate(num):
-        for each in range(num):
+        for _ in range(num):
             for key in nxt:
                 nxt[key] = nxt[key][1:] + nxt[key][:1]
             for key in words:
                 words[key] = words[key][1:] + words[key][:1]
 
-
+    added = 1
+    for let in inquiry:
+        added += alphabet(let)
+    iterate(added)
     word_id = ['start','start','start']
     answer = ''
     loop = 2
-    for each in range(floor(sqrt(len(inquiry))*17)):
+    for each in range(floor(sqrt(len(inquiry))*13)):
         xqc = word_id[loop]
         t = nxt[word_id[loop]]
         failed = True
@@ -142,7 +147,7 @@ def run(entry):
             answer += word
         word_id.append(tt)
         loop += 1
-        iterate((round(loop % 5 // len(inquiry)))+1)
+        iterate(loop-1)
 
     if word_id[loop] == 'punct': finished = True
     else: finished = False
@@ -165,7 +170,7 @@ def run(entry):
             answer += word
         word_id.append(tt)
         loop += 1
-        iterate((round(loop % 5 // len(inquiry)))+1)
+        iterate(loop-1)
 
         if tt == 'punct': finished = True
 

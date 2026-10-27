@@ -1,0 +1,16 @@
+{
+  //Tkinter:
+  "name": "Tkinter GUI with Audio",
+  "image": "mcr.microsoft.com/devcontainers/python:3",
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {}
+  },
+  //Port:
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "Tkinter GUI",
+      "visibility": "public"
+    }
+  }
+}

@@ -5,7 +5,7 @@ def run(entry,ans):
     if inquiry == '': inquiry = ' '
 
     adjectives = ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low','slippery','rough','vibrant','large','massive','Scottish','disgusting','vile','godlike','good','bad','evil','pricey',
-                  'Islamic','Christian','smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','emo','egotistical','unrealistic','tasty','feminine','masculine','girly','manly','special',
+                  'smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','emo','egotistical','unrealistic','tasty','feminine','masculine','girly','manly','special',
                   'intruiging','zesty','illegal','ethical','unethical','legal','religous','non-religous','colorful','Aetheist','British','French','English','American','cheesy','wet','nasty','sticky','clean','rich','fancy','shiny']
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll',
              'penny','t-shirt','dinosaurs']

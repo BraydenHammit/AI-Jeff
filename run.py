@@ -1,6 +1,6 @@
 from math import sqrt, floor
 
-def run(entry,ans):
+def run(entry):
     inquiry = entry.get()
     if inquiry == '': inquiry = ' '
 

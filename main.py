@@ -3,17 +3,20 @@ import tkinter as tk
 
 def run():
     inquiry = entry.get()
+    if inquiry == '': inquiry = ' '
 
-    adjectives = ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low','slippery','rough','vibrant','large','massive','disgusting','vile']
-    nouns = ['cheese','basketball','football','China','McDonalds','Breaking Bad']
-    the_nouns = ['the cat','the government','the cheeseburger','the law']
-    plur_nouns = ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens','ideas','laws']
+    adjectives = ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low','slippery','rough','vibrant','large','massive','Scottish','disgusting','vile','godlike','good','bad','evil','Jewish',
+                  'Islamic','Christian','smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive']
+    nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','eclipse','famine','disease','[REDACTED]','idea','BitCoin']
+    the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past']
+    plur_nouns = ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens', 'ideas', 'laws', 'taxes']
 
     words = {
         'self': ['I'],
-        'people': ['Jeff','Obama','Trump','Heisenberg','Rick','Morty','Harry Potter'],
-        'verb': ['hate','love','eat','murder','own','ignore','sell'],
-        'verbS': ['hates','loves','eats','murders','owns','ignores','admires','built','cooks','sells'],
+        'people': ['Jeff','Obama','Trump','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds'],
+        'verb': ['hate','love','eat','murder','own','ignore','sell','torture'],
+        'verbS': ['hates','loves','eats','murders','owns','ignores','admires','built','cooks','sells','tortures'],
+        'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm'],
         'am': ['am'],
         'are': ['are'],
         'is': ['is'],
@@ -23,7 +26,6 @@ def run():
         'a': ['a'],
         'user': ['you'],
         'noun': nouns,
-        'noun is': nouns,
         'the noun': the_nouns,
         'the noun is': the_nouns,
         'plur noun': plur_nouns,
@@ -34,26 +36,25 @@ def run():
         'punct': ['.','...','!','?']
     }
     nxt = {
-        'start': ['self','people','userS','noun is','plur noun are','the noun is'],
+        'start': ['self','people','userS','plur noun are','the noun is'],
         'self': ['verb','am'],
         'people': ['verbS','is'],
-        'am': ['AMadjective','noun','a','the noun'],
-        'is': ['adjective','noun','a','the noun'],
+        'am': ['AMadjective','a','the noun'],
+        'is': ['AMadjective','a','the noun'],
         'verb': ['plur noun','noun','adjective','the noun'],
         'verbS': ['plur noun','user','the noun'],
         'user': ['punct'],
         'userS': ['punct','are'],
-        'are': ['adjective','noun','a'],
+        'are': ['AMadjective','a','the noun'],
         'noun': ['punct'],
         'the noun': ['punct'],
-        'noun is': ['is'],
         'the noun is': ['is'],
         'plur noun are': ['are'],
         'plur noun': ['punct'],
         'adjective': ['plur noun'],
         'AMadjective': ['punct'],
         'adjectiveQ': ['noun'],
-        'punct': ['self','people','userS','noun is','plur noun are','the noun is'],
+        'punct': ['self','people','userS','plur noun are','the noun is'],
         'a': ['adjectiveQ']
     }
 

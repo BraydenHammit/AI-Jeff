@@ -5,22 +5,23 @@ def run(entry,ans):
     if inquiry == '': inquiry = ' '
 
     adjectives = ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low','slippery','rough','vibrant','large','massive','Scottish','disgusting','vile','godlike','good','bad','evil','pricey',
-                  'smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','emo','egotistical','unrealistic','tasty','feminine','masculine','girly','manly','special','lonely',
-                  'intruiging','zesty','illegal','ethical','unethical','legal','religous','non-religous','colorful','Aetheist','British','French','English','American','cheesy','wet','nasty','sticky','clean','rich','fancy','shiny']
-    nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll',
-             'penny','t-shirt','dinosaurs','turtle']
-    the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president']
-    plur_nouns = ['cats','snakes','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists']
+                  'smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','emo','egotistical','unrealistic','tasty','feminine','masculine','girly','manly','special','lonely','killer',
+                  'intruiging','zesty','illegal','ethical','unethical','legal','religous','non-religous','colorful','Aetheist','British','French','English','American','cheesy','wet','nasty','sticky','clean','rich','fancy','shiny','unintelligent',
+                  'confused']
+    nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
+             'penny','t-shirt','dinosaurs','turtle','killer','human','fish','feline','Aetheist']
+    the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','your mother']
+    plur_nouns = ['cats','snakes','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families']
 
     words = {
         'self': ['I'],
-        'people': ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff',     'Obama','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','god','the Lord','the devil','your mother',
-                   'Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark'],
+        'people': ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff',     'Obama','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','God',
+                   'Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Jeff the Killer','Technoblade','KTaylor Gaming'],
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture'],
         'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures'],
         'past verb': ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored'],
         'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End','the Overworld',
-                      'the Sift','the Roblox Headquarters'],
+                      'the Sift','the Roblox Headquarters','Mother Russia'],
         'going to': ['going to'],
         'am': ['am'],
         'are': ['are'],
@@ -37,7 +38,7 @@ def run(entry,ans):
         'adjective': adjectives,
         'adjectiveQ': adjectives,
         'AMadjective': adjectives,
-        'punct': ['.','.','.','.','.','.',    '...','!','?'],
+        'punct': ['.','.','.','.','.','.','.','.','.','.','.','.',    '...','!','?'],
         'com': [','],
         'conjunction': ['for','and','yet','so','because','or','or maybe']
     }

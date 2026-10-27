@@ -166,4 +166,4 @@ def run(entry,ans):
 
         if tt == 'punct': finished = True
 
-    ans.configure(text=answer)
+    return answer

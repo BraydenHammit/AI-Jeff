@@ -1,25 +1,40 @@
 from math import floor, sqrt
 
 words = {
-    'self': ['I','Jeff'],
+    'self': ['I'],
+    'self3rd': ['Jeff'],
     'verb': ['hate','love','eat','murder'],
+    'verbS': ['hates','loves','eats','murders','owns'],
+    'am': ['am'],
+    'are': ['are'],
+    'is': ['is'],
+    'are': ['are'],
+    'userS': ['you'],
+    'a': ['a(n)'],
     'user': ['you'],
-    'def': ['the'],
-    'noun': ['cheese','cat', 'government'],
-    'plur noun': ['cats', 'snakes', 'foxes', 'fish', 'tables'],
-    'adjective': ['green','ugly','handsome','pretty','juicy'],
-    'punct': ['.','...']
+    'noun': ['cheese','the cat','the government','basketball','football','China','the cheeseburger','McDonalds'],
+    'plur noun': ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens'],
+    'adjective': ['green','ugly','handsome','pretty','juicy','sentient'],
+    'adjectiveQ': ['green','ugly','handsome','pretty','juicy','sentient'],
+    'punct': ['.','...','!','?']
 }
 nxt = {
-    'start': ['self','user','noun'],
-    'self': ['verb'],
-    'verb': ['plur noun','noun','user'],
+    'start': ['self','self3rd','userS','noun'],
+    'self': ['verb','am'],
+    'self3rd': ['verbS','is'],
+    'am': ['adjective','noun','a'],
+    'is': ['adjective','noun','a'],
+    'verb': ['plur noun','noun','adjective'],
+    'verbS': ['plur noun','user'],
     'user': ['punct'],
-    'def': '____________',
+    'userS': ['punct','are'],
+    'are': ['adjective','noun','a'],
     'noun': ['punct'],
     'plur noun': ['punct'],
-    'adjective': ['noun','plur noun'],
-    'punct': ['self','user','noun']
+    'adjective': ['plur noun'],
+    'adjectiveQ': ['noun'],
+    'punct': ['self','user','noun','self3rd'],
+    'a': ['adjectiveQ']
 }
 inquiry = input('Request: ')
 
@@ -71,30 +86,39 @@ for each in range(floor(sqrt(len(inquiry))*7)):
     t = nxt[word_id[loop]]
     failed = True
     iteration = 0
-    while failed:
-        iteration += 1
-        try:
-            tt = t[round(sqrt(loop*len(t)//len(t)+iteration))]
-            failed = False
-        except: 
-            try:
-                tt = t[round(iteration//len(t))]
-            except: pass
-        if iteration > 100:
-            tt = t[0]
-            failed = False
+    tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 5) % len(t)]
     if not tt == 'punct':
         answer += ' '
     char = inquiry[(loop - 2) % len(inquiry)]
     choices = words[tt]
     word = choices[(alphabet(char) - 1) % len(choices)]
-    if xqc == 'start':
-        answer += word.title() 
+    if xqc in ('start','punct'):
+        answer += word.capitalize() 
     else:
         answer += word
     word_id.append(tt)
     loop += 1
 
+if word_id[loop] == 'punct': finished = True
+else: finished = False
+while finished == False:
+    xqc = word_id[loop]
+    t = nxt[word_id[loop]]
+    failed = True
+    iteration = 0
+    tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 5) % len(t)]
+    if not tt == 'punct':
+        answer += ' '
+    char = inquiry[(loop - 2) % len(inquiry)]
+    choices = words[tt]
+    word = choices[(alphabet(char) - 1) % len(choices)]
+    if xqc in ('start','punct'):
+        answer += word.capitalize() 
+    else:
+        answer += word
+    word_id.append(tt)
+    loop += 1
 
+    if tt == 'punct': finished = True
 
 print(answer)

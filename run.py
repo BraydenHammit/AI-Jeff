@@ -4,18 +4,18 @@ def run(entry,ans):
     inquiry = entry.get()
     if inquiry == '': inquiry = ' '
 
-    adjectives = ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low','slippery','rough','vibrant','large','massive','Scottish','disgusting','vile','godlike','good','bad','evil','Jewish',
+    adjectives = ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low','slippery','rough','vibrant','large','massive','Scottish','disgusting','vile','godlike','good','bad','evil','pricey',
                   'Islamic','Christian','smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','emo','egotistical','unrealistic','tasty','feminine','masculine','girly','manly','special',
-                  'intruiging','zesty','illegal','ethical','unethical','legal','religous','non-religous','colorful','Aetheist','British','French','English','American','cheesy','wet','nasty','sticky','clean']
-    nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','Christianity',
-             'Judaism','penny','t-shirt','dinosaurs']
-    the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the Jewish','the Islamic']
-    plur_nouns = ['cats','snakes','foxes','fish','tables','people','citizens','ideas','laws','taxes','Jews','potatoes','robots','things','gadgets','Christians','Muslims','Aetheists']
+                  'intruiging','zesty','illegal','ethical','unethical','legal','religous','non-religous','colorful','Aetheist','British','French','English','American','cheesy','wet','nasty','sticky','clean','rich','fancy','shiny']
+    nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll',
+             'penny','t-shirt','dinosaurs']
+    the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past']
+    plur_nouns = ['cats','snakes','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists']
 
     words = {
         'self': ['I'],
-        'people': ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff',     'Obama','Trump','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','god','the Lord','the devil','Joe Biden','your mother',
-                   'Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kim Paxton','James Talarico'],
+        'people': ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff',     'Obama','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','god','the Lord','the devil','your mother',
+                   'Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','James Talarico'],
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture'],
         'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures'],
         'past verb': ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored'],

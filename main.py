@@ -8,7 +8,7 @@ root.config(bg='grey40')
 
 def r():
     global teext, answer
-    answer = run(entry,ans)
+    answer = run(entry)
     ans.configure(text='')
     teext = ''
     root.after(5,nextlet)

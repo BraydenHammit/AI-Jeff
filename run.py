@@ -5,14 +5,14 @@ def run(entry,ans):
     if inquiry == '': inquiry = ' '
 
     adjectives = ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low','slippery','rough','vibrant','large','massive','Scottish','disgusting','vile','godlike','good','bad','evil','Jewish',
-                  'Islamic','Christian','smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive']
-    nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','eclipse','famine','disease','[REDACTED]','idea','BitCoin']
+                  'Islamic','Christian','smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','egotistical']
+    nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','emo','eclipse','famine','disease','[REDACTED]','idea','BitCoin']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past']
     plur_nouns = ['cats', 'snakes', 'foxes', 'fish', 'tables', 'people', 'citizens', 'ideas', 'laws', 'taxes']
 
     words = {
         'self': ['I'],
-        'people': ['Jeff','Obama','Trump','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds'],
+        'people': ['Jeff','Obama','Trump','Heisenberg','Rick','Morty','Harry Potter','some random guy','McDonalds','Sheldon1436','JosephGotG','satan','god','the Lord','the devil'],
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture'],
         'verbS': ['hates','loves','eats','murders','owns','ignores','admires','built','cooks','sells','tortures'],
         'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm'],
@@ -43,7 +43,7 @@ def run(entry,ans):
         'verb': ['plur noun','noun','adjective','the noun'],
         'verbS': ['plur noun','user','the noun'],
         'user': ['punct'],
-        'userS': ['punct','are'],
+        'userS': ['are'],
         'are': ['AMadjective','a','the noun'],
         'noun': ['punct'],
         'the noun': ['punct'],
@@ -112,7 +112,7 @@ def run(entry,ans):
         t = nxt[word_id[loop]]
         failed = True
         iteration = loop // 2
-        tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 5) % len(t)]
+        tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 7) % len(t)]
         char = inquiry[(loop - 2) % len(inquiry)]
         choices = words[tt]
         word = choices[(alphabet(char) - 1) % len(choices)]

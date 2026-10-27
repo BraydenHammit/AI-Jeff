@@ -24,7 +24,7 @@ def run(entry):
         'past verb': ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed'],
         'gverb': ['explode','die','dissapear','disintegrate','leave','apolagize'],
         'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
-                      'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park'],
+                      'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Steve Jobs','Steve','Alex'],
         'going to': ['going to'],
         'am': ['am'],
         'are': ['are'],

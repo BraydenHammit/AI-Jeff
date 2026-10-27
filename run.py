@@ -18,7 +18,7 @@ def run(entry):
         'self': ['I'],
         'people': ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter',
                    'some random guy','McDonalds','Sheldon1436','JosephGotG','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft',
-                   'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex'],
+                   'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione'],
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill'],
         'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills'],
         'past verb': ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed'],

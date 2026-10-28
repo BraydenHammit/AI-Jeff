@@ -6,6 +6,7 @@ root.title('Jeff the AI')
 root.geometry('700x420')
 root.config(bg='grey40')
 blink_state = 'o'
+repitition = 1
 
 images = {
     'def': tk.PhotoImage(file='images/default.png').subsample(3,3),
@@ -36,15 +37,16 @@ def nextlet():
     root.update_idletasks()
 
 def blink():
-    global blink_state
+    global blink_state, repitition
+    repitition += 1
     if blink_state == 'o':
         blink_state = 'c'
         img.configure(image=images['blk'])
-        root.after(200,blink)
+        root.after(100,blink)
     elif blink_state == 'c':
         blink_state = 'o'
         img.configure(image=images['def'])
-        root.after(10000,blink)
+        root.after(2800 + ((repitition * 152) % 4000),blink)
 
 img = tk.Label(root,image=images['def'],highlightbackground='grey40',bg='grey40')
 img.place(x=10,y=10)
@@ -61,6 +63,6 @@ ok.pack(side=tk.RIGHT)
 ans = tk.Label(overfrm,text='Jeff answers here!',fg='yellow',wraplength=350,justify="left",anchor="w",highlightbackground='grey40',bg='grey40')
 ans.pack(pady=10)
 
-root.after(10000,blink)
+root.after(2800 + ((repitition * 152) % 4000),blink)
 root.update_idletasks()
 root.mainloop()

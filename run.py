@@ -12,16 +12,16 @@ def run(entry):
                   'humane','inhumane','toxic','poisonous','strange']
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
              'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg','tariff','chicken','bee','salad','desk','mouse','chair','moose','cactus','plant','tree','banana','chair','bum',
-             'man','woman','boy','girl','child','fungus','infection','virus','bacteria','amoeba','mushroom','ghost','skeleton','mummy','zombie','candy','pickle','apple']
+             'man','woman','boy','girl','child','fungus','infection','virus','bacteria','amoeba','mushroom','ghost','skeleton','mummy','zombie','candy','pickle','apple','minion']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','your mother','the Earth','the people','the One Ring','the Chosen One',
-                 'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI','the FDA','the Secret Service','everything']
-    plur_nouns = ['cats','rats','snakes','cheese','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chicken','dinosaurs',
+                 'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI','the FDA','the Secret Service','everything','the moon']
+    plur_nouns = ['cats','rats','snakes','cheese','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chickens','dinosaurs',
                   'bees','mice','geese','desks','chairs','bananas','plants','trees','cacti','mooses','bums','men','women','boys','girls','children','fungi','infections','viruses','bacteria','amoebae','mushrooms','ghosts','skeletons','mummies','zombies',
-                  'candies','pickles','apples','human rights']
+                  'candies','pickles','apples','human rights','minions']
     people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter','Elon Musk',
             'some random guy','McDonalds','Sheldon1436','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Tom Holland','Spiderman',
             'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
-            'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi']
+            'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru']
 
     words = {
         'self': ['I'],

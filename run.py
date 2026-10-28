@@ -25,7 +25,7 @@ def run(entry):
 
     words = {
         'self': ['I'],
-        "selfm": ["I'm"],
+        "selfm": ["I'm","I'm not"],
         'people': people,
         'peopleX': people,
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename'],
@@ -36,9 +36,9 @@ def run(entry):
         'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
                       'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia'],
         'going to': ['going to'],
-        'am': ['am'],
-        'are': ['are'],
-        'is': ['is'],
+        'am': ['am','am not'],
+        'are': ['are','are not'],
+        'is': ['is','is not',"isn't"],
         'be': ['be'],
         'userS': ['you'],
         'from': ['from'],

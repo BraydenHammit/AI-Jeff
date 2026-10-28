@@ -11,10 +11,10 @@ def run(entry):
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
              'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg','tariff','chicken','bee','salad']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','your mother','the earth','the people','the One Ring','the Chosen One',
-                 'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence']
+                 'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI']
     plur_nouns = ['cats','rats','snakes','cheese','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chicken','dinosaurs',
                   'bees']
-    people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter',
+    people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter','Elon Musk',
             'some random guy','McDonalds','Sheldon1436','JosephGotG','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft',
             'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione']
 
@@ -137,7 +137,6 @@ def run(entry):
     for each in range(floor(sqrt(len(inquiry))*13)):
         xqc = word_id[loop]
         t = nxt[word_id[loop]]
-        failed = True
         iteration = loop // 2
         tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 7) % len(t)]
         char = inquiry[(loop - 2) % len(inquiry)]
@@ -158,12 +157,14 @@ def run(entry):
         loop += 1
         iterate(loop-1)
 
+    extloop = 0
     if word_id[loop] == 'punct': finished = True
     else: finished = False
     while finished == False:
         xqc = word_id[loop]
         t = nxt[word_id[loop]]
-        failed = True
+        if ('com' in t) and extloop > 99:
+            t = ['punct']
         iteration = loop // 2
         tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 5) % len(t)]
         char = inquiry[(loop - 2) % len(inquiry)]
@@ -182,6 +183,7 @@ def run(entry):
             answer += word
         word_id.append(tt)
         loop += 1
+        extloop += 1
         iterate(loop-1)
 
         if tt == 'punct': finished = True

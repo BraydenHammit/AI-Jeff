@@ -9,7 +9,7 @@ def run(entry):
                   'smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','emo','egotistical','unrealistic','tasty','feminine','masculine','girly','manly','special','lonely','killer',
                   'intruiging','zesty','illegal','ethical','unethical','legal','religous','non-religous','colorful','Aetheist','British','French','English','American','Dutch','Czech','cheesy','wet','nasty','sticky','clean','rich','fancy','shiny','unintelligent',
                   'confused','slow','fast','sorry','gold','blue','yellow','pink','grey','brown','rainbow','clear','supportive','helpful','honest','dishonest','trustworthy','untrustworthy','loyal','universal','spiteful','helpless','bald','sour','bitter',
-                  'humane','inhumane','toxic','poisonous','strange','dark','light','black','white','monotone','bouncy']
+                  'humane','inhumane','toxic','poisonous','strange','dark','light','black','white','monotone','bouncy','empty','mixed]
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
              'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg','tariff','chicken','bee','salad','desk','mouse','chair','moose','cactus','plant','tree','banana','chair','bum',
              'man','woman','boy','girl','child','fungus','infection','virus','bacteria','amoeba','mushroom','ghost','skeleton','mummy','zombie','candy','pickle','apple','minion']
@@ -22,6 +22,7 @@ def run(entry):
             'some random guy','McDonalds','Sheldon1436','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Tom Holland','Spiderman',
             'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
             'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru']
+    past_verb = ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed']
 
     words = {
         'self': ['I'],
@@ -30,7 +31,8 @@ def run(entry):
         'peopleX': people,
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename'],
         'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames'],
-        'past verb': ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed'],
+        'past verb': past_verb,
+        'past verb e': past_verb,
         'gverb': ['explode','die','dissapear','disintegrate','leave','apologize'],
         'verbing': ['killing','murdering','hanging','removing','executing','hunting','torturing','eating','ignoring'],
         'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
@@ -83,13 +85,14 @@ def run(entry):
         'going to': ['locations','gverb','verb','be'],
         'locations': ['punct','punct','punct','com'],
         'AMadjective': ['punct','punct','punct','com'],
-        'be': ['AMadjective','a'],
+        'be': ['AMadjective','a','past verb e],
         'com': ['conjunction'],
         'conjunction': ['self','selfm','people','userS','plur noun are','the noun is'],
         'adjectiveQ': ['noun'],
         'punct': ['self','selfm','people','userS','plur noun are','the noun is','answer'],
         'a': ['adjectiveQ','noun'],
-        'answer': ['punct','punct','punct','com']
+        'answer': ['punct','punct','punct','com'],
+        'past verb e': ['punct','punct','punct','com']
     }
 
     def iterate(num):

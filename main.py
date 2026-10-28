@@ -22,7 +22,9 @@ def r():
 
 def nextlet():
     global teext
-    teext += answer[len(teext)]
+    try:
+        teext += answer[len(teext)]
+    except IndexError: return
     ans.configure(text=teext)
     if (len(teext) % 20) == 0:
         img.configure(image=images['def'])

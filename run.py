@@ -20,6 +20,7 @@ def run(entry):
 
     words = {
         'self': ['I'],
+        "selfm": ["I'm"],
         'people': people,
         'peopleX': people,
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename'],
@@ -50,11 +51,12 @@ def run(entry):
         'conjunction': ['for','and','yet','so','because','or','or maybe']
     }
     nxt = {
-        'start': ['self','people','userS','plur noun are','the noun is'],
+        'start': ['self','selfm','people','userS','plur noun are','the noun is'],
         'self': ['verb','am','past verb'],
         'people': ['verbS','is','past verb'],
         'peopleX': ['punct','punct','punct','com'],
         'am': ['AMadjective','a','the noun','from','going to','peopleX'],
+        'selfm': ['AMadjective','a','the noun','from','going to','peopleX'],
         'is': ['AMadjective','a','the noun','from','going to','peopleX'],
         'verb': ['plur noun','a','adjective','the noun'],
         'verbS': ['plur noun','user','the noun'],
@@ -75,9 +77,9 @@ def run(entry):
         'AMadjective': ['punct','punct','punct','com'],
         'be': ['AMadjective'],
         'com': ['conjunction'],
-        'conjunction': ['self','people','userS','plur noun are','the noun is'],
+        'conjunction': ['self','selfm','people','userS','plur noun are','the noun is'],
         'adjectiveQ': ['noun'],
-        'punct': ['self','people','userS','plur noun are','the noun is'],
+        'punct': ['self','selfm','people','userS','plur noun are','the noun is'],
         'a': ['adjectiveQ','noun']
     }
 

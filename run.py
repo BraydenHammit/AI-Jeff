@@ -137,7 +137,7 @@ def run(entry):
         char = inquiry[(loop - 2) % len(inquiry)]
         choices = words[tt]
         word = choices[(alphabet(char) - 1) % len(choices)]
-        if xqc == 'a' and word[0].lower() in ('i','o','u','a','e'):
+        if xqc == 'a' and ((word[0].lower() in ('i','o','u','a','e')) or (word == 'honest')):
             answer += 'n'
         if tt not in ('punct','com'):
             answer += ' '
@@ -160,7 +160,7 @@ def run(entry):
         char = inquiry[(loop - 2) % len(inquiry)]
         choices = words[tt]
         word = choices[(alphabet(char) - 1) % len(choices)]
-        if xqc == 'a' and word[0].lower() in ('i','o','u','a','e'):
+        if xqc == 'a' and ((word[0].lower() in ('i','o','u','a','e')) or (word == 'honest')):
             answer += 'n'
         if tt not in ('punct','com'):
             answer += ' '

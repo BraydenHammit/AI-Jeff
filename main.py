@@ -3,8 +3,15 @@ import tkinter as tk
 
 root = tk.Tk()
 root.title('Jeff the AI')
-root.geometry('400x300')
+root.geometry('700x420')
 root.config(bg='grey40')
+blink_state = 'o'
+
+images = {
+    'def': tk.PhotoImage(file='images/default.png').subsample(3,3),
+    'talk': tk.PhotoImage(file='images/talking.png').subsample(3,3),
+    'blk': tk.PhotoImage(file='images/blink.png').subsample(3,3)
+}
 
 def r():
     global teext, answer
@@ -17,19 +24,41 @@ def nextlet():
     global teext
     teext += answer[len(teext)]
     ans.configure(text=teext)
+    if (len(teext) % 20) == 0:
+        img.configure(image=images['def'])
+    elif (len(teext) % 10) == 0:
+        img.configure(image=images['talk'])
     if not (len(teext) == len(answer)):
         root.after(5,nextlet)
+    else: img.configure(image=images['def'])
+    root.update_idletasks()
 
-txt = tk.Label(root,text='Request:',fg='magenta',highlightbackground='grey40',bg='grey40')
+def blink():
+    global blink_state
+    if blink_state == 'o':
+        blink_state = 'c'
+        img.configure(image=images['blk'])
+        root.after(200,blink)
+    elif blink_state == 'c':
+        blink_state = 'o'
+        img.configure(image=images['def'])
+        root.after(10000,blink)
+
+img = tk.Label(root,image=images['def'],highlightbackground='grey40',bg='grey40')
+img.place(x=10,y=10)
+overfrm = tk.Frame(root,highlightbackground='grey40',bg='grey40',width=360)
+overfrm.place(x=330,y=10)
+txt = tk.Label(overfrm,text='                                           Request:                                           ',fg='magenta',highlightbackground='grey40',bg='grey40')
 txt.pack(pady=5)
-frm = tk.Frame(root,highlightbackground='grey40',bg='grey40')
-entry = tk.Entry(frm,highlightbackground='grey40',bg='grey40')
+frm = tk.Frame(overfrm,highlightbackground='grey40',bg='grey40')
+entry = tk.Entry(frm,highlightbackground='grey40',bg='grey30')
 ok = tk.Button(frm,text='Ok',command=r,highlightbackground='grey40',bg='grey60')
 frm.pack()
 entry.pack(side=tk.LEFT,padx=5)
 ok.pack(side=tk.RIGHT)
-ans = tk.Label(root,text='Jeff answers here!',fg='yellow',wraplength=350,justify="left",anchor="w",highlightbackground='grey40',bg='grey40')
+ans = tk.Label(overfrm,text='Jeff answers here!',fg='yellow',wraplength=350,justify="left",anchor="w",highlightbackground='grey40',bg='grey40')
 ans.pack(pady=10)
 
+root.after(10000,blink)
 root.update_idletasks()
 root.mainloop()

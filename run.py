@@ -46,7 +46,7 @@ def run(entry):
         'from': ['from'],
         'a': ['a'],
         'user': ['you'],
-        'userA': ["you're"]
+        'userA': ["you're"],
         'answer': ['yes','no','maybe','probably','probably not'],
         'noun': nouns,
         'the noun': the_nouns,
@@ -86,7 +86,7 @@ def run(entry):
         'going to': ['locations','gverb','verb','be'],
         'locations': ['punct','punct','punct','com'],
         'AMadjective': ['punct','punct','punct','com'],
-        'be': ['AMadjective','a','past verb e],
+        'be': ['AMadjective','a','past verb e'],
         'com': ['conjunction'],
         'conjunction': ['self','selfm','people','userS','userA','plur noun are','the noun is'],
         'adjectiveQ': ['noun'],

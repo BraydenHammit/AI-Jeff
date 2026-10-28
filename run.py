@@ -76,6 +76,7 @@ def run(entry):
         'user': ['punct','punct','punct','com'],
         'userS': ['are'],
         'are': ['AMadjective','a','the noun','from','going to','peopleX','verbing'],
+        'userA': ['AMadjective','a','the noun','from','going to','peopleX','verbing'],
         'noun': ['punct','punct','punct','com'],
         'the noun': ['punct','punct','punct','com'],
         'the noun is': ['is','past verb'],

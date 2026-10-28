@@ -50,7 +50,7 @@ def run(entry):
         'start': ['self','people','userS','plur noun are','the noun is'],
         'self': ['verb','am','past verb'],
         'people': ['verbS','is','past verb'],
-        'am': ['AMadjective','a','the noun','from','going to'],
+        'am': ['AMadjective','a','the noun','from','going to','people'],
         'is': ['AMadjective','a','the noun','from','going to'],
         'verb': ['plur noun','a','adjective','the noun'],
         'verbS': ['plur noun','user','the noun'],

@@ -12,14 +12,16 @@ def run(entry):
              'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg','tariff','chicken','bee','salad']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','your mother','the earth','the people','the One Ring','the Chosen One',
                  'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence']
-    plur_nouns = ['cats','rats','snakes','cheese','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chicken','dinosaur',
+    plur_nouns = ['cats','rats','snakes','cheese','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chicken','dinosaurs',
                   'bees']
+    people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter',
+            'some random guy','McDonalds','Sheldon1436','JosephGotG','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft',
+            'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione']
 
     words = {
         'self': ['I'],
-        'people': ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter',
-                   'some random guy','McDonalds','Sheldon1436','JosephGotG','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft',
-                   'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione'],
+        'people': people,
+        'peopleX': people,
         'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang'],
         'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs'],
         'past verb': ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung'],
@@ -50,15 +52,16 @@ def run(entry):
         'start': ['self','people','userS','plur noun are','the noun is'],
         'self': ['verb','am','past verb'],
         'people': ['verbS','is','past verb'],
-        'am': ['AMadjective','a','the noun','from','going to','people'],
-        'is': ['AMadjective','a','the noun','from','going to'],
+        'peopleX': ['punct','punct','punct','com'],
+        'am': ['AMadjective','a','the noun','from','going to','peopleX'],
+        'is': ['AMadjective','a','the noun','from','going to','peopleX'],
         'verb': ['plur noun','a','adjective','the noun'],
         'verbS': ['plur noun','user','the noun'],
         'gverb': ['punct','punct','punct','com'],
         'past verb': ['plur noun','user','the noun','a'],
         'user': ['punct','punct','punct','com'],
         'userS': ['are'],
-        'are': ['AMadjective','a','the noun','from','going to'],
+        'are': ['AMadjective','a','the noun','from','going to','peopleX'],
         'noun': ['punct','punct','punct','com'],
         'the noun': ['punct','punct','punct','com'],
         'the noun is': ['is','past verb'],
@@ -73,7 +76,7 @@ def run(entry):
         'conjunction': ['self','people','userS','plur noun are','the noun is'],
         'adjectiveQ': ['noun'],
         'punct': ['self','people','userS','plur noun are','the noun is'],
-        'a': ['adjectiveQ']
+        'a': ['adjectiveQ','noun']
     }
 
     def alphabet(value):

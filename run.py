@@ -22,15 +22,15 @@ def run(entry):
             'some random guy','McDonalds','Sheldon1436','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Tom Holland','Spiderman',
             'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
             'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru']
-    past_verb = ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned']
+    past_verb = ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted']
 
     words = {
         'self': ['I'],
         "selfm": ["I'm","I'm not"],
         'people': people,
         'peopleX': people,
-        'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban'],
-        'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans'],
+        'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt'],
+        'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts'],
         'past verb': past_verb,
         'past verb e': past_verb,
         'gverb': ['explode','die','dissapear','disintegrate','leave','apologize'],
@@ -46,6 +46,7 @@ def run(entry):
         'from': ['from'],
         'a': ['a'],
         'user': ['you'],
+        'userA': ["you're"]
         'answer': ['yes','no','maybe','probably','probably not'],
         'noun': nouns,
         'the noun': the_nouns,
@@ -60,7 +61,7 @@ def run(entry):
         'conjunction': ['for','and','yet','so','because','or','or maybe']
     }
     nxt = {
-        'start': ['self','selfm','people','userS','plur noun are','the noun is','answer'],
+        'start': ['self','selfm','people','userS','userA','plur noun are','the noun is','answer'],
         'self': ['verb','am','past verb'],
         'people': ['verbS','is','past verb'],
         'peopleX': ['punct','punct','punct','com'],
@@ -87,9 +88,9 @@ def run(entry):
         'AMadjective': ['punct','punct','punct','com'],
         'be': ['AMadjective','a','past verb e],
         'com': ['conjunction'],
-        'conjunction': ['self','selfm','people','userS','plur noun are','the noun is'],
+        'conjunction': ['self','selfm','people','userS','userA','plur noun are','the noun is'],
         'adjectiveQ': ['noun'],
-        'punct': ['self','selfm','people','userS','plur noun are','the noun is','answer'],
+        'punct': ['self','selfm','people','userS','userA','plur noun are','the noun is','answer'],
         'a': ['adjectiveQ','noun'],
         'answer': ['punct','punct','punct','com'],
         'past verb e': ['punct','punct','punct','com']

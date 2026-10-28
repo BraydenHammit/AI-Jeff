@@ -11,7 +11,7 @@ def run(entry):
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
              'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg','tariff','chicken','bee','salad']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','your mother','the Earth','the people','the One Ring','the Chosen One',
-                 'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI','the FDA','the Secret Service']
+                 'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI','the FDA','the Secret Service','everything']
     plur_nouns = ['cats','rats','snakes','cheese','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chicken','dinosaurs',
                   'bees']
     people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter','Elon Musk',
@@ -22,9 +22,9 @@ def run(entry):
         'self': ['I'],
         'people': people,
         'peopleX': people,
-        'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out'],
-        'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks'],
-        'past verb': ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought'],
+        'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename'],
+        'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames'],
+        'past verb': ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed'],
         'gverb': ['explode','die','dissapear','disintegrate','leave','apologize'],
         'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
                       'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia'],
@@ -108,7 +108,37 @@ def run(entry):
             'w': 23,
             'x': 24,
             'y': 25,
-            'z': 26
+            'z': 26,
+            '[': 27,
+            '[': 27,
+            ']': 28,
+            '{': 29,
+            '}': 30,
+            '(': 31,
+            ')': 32,
+            '!': 33,
+            '?': 34,
+            '.': 35,
+            ',': 36,
+            ';': 37,
+            ':': 38,
+            "'": 39, 
+            '"': 40, 
+            '-': 41, 
+            '_': 42, 
+            '/': 43, 
+            '\\': 44, 
+            '|': 45, 
+            '+': 46, 
+            '=': 47, 
+            '&': 48, 
+            '@': 49, 
+            '#': 50, 
+            '$': 51, 
+            '%': 52, 
+            '^': 53,
+            '~': 54,
+            '`': 55
         }
         try:
             val = alph[value.lower()]

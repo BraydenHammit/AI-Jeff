@@ -7,6 +7,7 @@ root.geometry('700x420')
 root.config(bg='grey40')
 blink_state = 'o'
 repitition = 1
+counter = 0
 
 images = {
     'def': tk.PhotoImage(file='images/default.png').subsample(3,3),
@@ -15,26 +16,28 @@ images = {
 }
 
 def r(_=None):
-    global teext, answer
+    global teext, answer, counter
+    counter += 1
     answer = run(entry)
     ans.configure(text='')
     teext = ''
-    root.after(5,nextlet)
+    root.after(5,lambda:nextlet(counter)
 
-def nextlet():
+def nextlet(c):
     global teext
-    try:
-        teext += answer[len(teext)]
-    except IndexError: return
-    ans.configure(text=teext)
-    if (len(teext) % 20) == 0:
-        img.configure(image=images['def'])
-    elif (len(teext) % 10) == 0:
-        img.configure(image=images['talk'])
-    if not (len(teext) == len(answer)):
-        root.after(5,nextlet)
-    else: img.configure(image=images['def'])
-    root.update_idletasks()
+    if counter == c:
+        try:
+            teext += answer[len(teext)]
+        except IndexError: return
+        ans.configure(text=teext)
+        if (len(teext) % 20) == 0:
+            img.configure(image=images['def'])
+        elif (len(teext) % 10) == 0:
+            img.configure(image=images['talk'])
+        if not (len(teext) == len(answer)):
+            root.after(5,lambda:nextlet(c)
+        else: img.configure(image=images['def'])
+        root.update_idletasks()
 
 def blink():
     global blink_state, repitition

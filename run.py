@@ -11,7 +11,7 @@ def run(entry):
                   'confused','slow','fast','sorry','gold','blue','yellow','pink','grey','brown','rainbow','clear','supportive','helpful','honest','dishonest','trustworthy','untrustworthy','loyal','universal','spiteful','helpless','bald','sour','bitter',
                   'humane','inhumane','toxic','poisonous','strange','dark','light','black','white','monotone','bouncy','empty','mixed','complete','crispy','tender','vegetative','underage','immature','mature','spicy','vigorous','magnetic','ferrous','non-ferrous',
                   'mettalic','acidic','colorlous','odorlous','popular','chunky','lame','disabled','enabled','obtuse','obese','overweight','underweight','acute','right','wrong','demented','clothed','naked','scared','afraid','daunting','burnt','cooked',
-                 'cursed','broken','dreaded','hated','loved']
+                 'cursed','broken','dreaded','hated','loved','common','rare','uncommon','epic','legendary','mythical','exotic','heroic']
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
              'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg','tariff','chicken','bee','salad','desk','mouse','chair','moose','cactus','plant','tree','banana','chair','bum',
              'man','woman','boy','girl','child','fungus','infection','virus','bacteria','amoeba','mushroom','ghost','skeleton','mummy','zombie','candy','pickle','apple','minion','dish','penguin','canine','pencil','cabinet','alien','cow','pig','gallon of milk',

@@ -14,7 +14,7 @@ images = {
     'blk': tk.PhotoImage(file='images/blink.png').subsample(3,3)
 }
 
-def r():
+def r(_=None):
     global teext, answer
     answer = run(entry)
     ans.configure(text='')
@@ -63,6 +63,7 @@ ok.pack(side=tk.RIGHT)
 ans = tk.Label(overfrm,text='Jeff answers here!',fg="#b6b118",wraplength=350,justify="left",anchor="w",highlightbackground='grey40',bg='grey40')
 ans.pack(pady=10)
 
+entry.bind('<Return>',r)
 root.after(2800 + ((repitition * 152) % 4000),blink)
 root.update_idletasks()
 root.mainloop()

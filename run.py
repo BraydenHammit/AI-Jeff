@@ -25,7 +25,7 @@ def run(entry):
     people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter','Elon Musk',
             'some random guy','McDonalds','Sheldon1436','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Tom Holland','Spiderman',
             'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
-            'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron']
+            'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ']
     past_verb = ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished']
 
     words = {
@@ -70,9 +70,9 @@ def run(entry):
         'self': ['verb','am','past verb'],
         'people': ['verbS','is','past verb'],
         'peopleX': ['punct','punct','punct','com'],
-        'am': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX',],
-        'selfm': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX',],
-        'is': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX',],
+        'am': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
+        'selfm': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
+        'is': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
         'verb': ['plur noun','a','adjective','the noun'],
         'verbing': ['plur noun','a','adjective','the noun'],
         'verbS': ['plur noun','user','selfX','the noun'],
@@ -81,8 +81,8 @@ def run(entry):
         'user': ['punct','punct','punct','com'],
         'selfX': ['punct','punct','punct','com'],
         'userS': ['are'],
-        'are': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX',],
-        'userA': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX',],
+        'are': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
+        'userA': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
         'noun': ['punct','punct','punct','com'],
         'the noun': ['punct','punct','punct','com'],
         'the noun is': ['is','past verb'],

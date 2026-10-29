@@ -21,7 +21,7 @@ def r(_=None):
     answer = run(entry)
     ans.configure(text='')
     teext = ''
-    root.after(5,lambda:nextlet(counter)
+    root.after(5,lambda:nextlet(counter))
 
 def nextlet(c):
     global teext
@@ -35,7 +35,7 @@ def nextlet(c):
         elif (len(teext) % 10) == 0:
             img.configure(image=images['talk'])
         if not (len(teext) == len(answer)):
-            root.after(5,lambda:nextlet(c)
+            root.after(5,lambda:nextlet(c))
         else: img.configure(image=images['def'])
         root.update_idletasks()
 

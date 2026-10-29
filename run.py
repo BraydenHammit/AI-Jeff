@@ -77,7 +77,7 @@ def run(entry):
         'am': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
         'selfm': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
         'is': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
-        'verb': ['plur noun','a','adjective','the noun'],
+        'verb': ['plur noun','adjective','the noun'],
         'verbing': ['plur noun','a','adjective','the noun'],
         'verbS': ['plur noun','user','selfX','the noun'],
         'gverb': ['punct','punct','punct','com'],

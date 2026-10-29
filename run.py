@@ -31,6 +31,15 @@ def run(entry):
             'Luigi','Yoshi','Sonic','DougDoug','Douglas Scott Wreden','CaseOh','IShowSpeed','Dr. Doofenshmirtz','Sans','Papyrus','Flowery','Agent P.','Perry the Platypus','Candice','Phineas','Ferb','Abraham Lincoln','Creak','KreekCraft','Figure','Seek',
             'George Washington','Rob','Sbeve','Terry','Larry','Killstreak','Guide','Mortis','Dave','Moai']
     past_verb = ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled']
+    verb = ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify','enslave','mind control']
+    verbS = ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies','enslaves','mind controls']
+    gverb = ['explode','die','dissapear','disintegrate','leave','apologize']
+    verbing = ['killing','murdering','hanging','removing','executing','hunting','torturing','eating','ignoring']
+    locations = ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
+                'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto']
+    anss = ['yes','no','maybe','probably','probably not']
+    conjunction = ['for','and','yet','so','because','or','or maybe']
+    punct = ['.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.',    '...','!','?']
 
     words = {
         'self': ['I'],
@@ -38,14 +47,13 @@ def run(entry):
         'selfX': ['me'],
         'people': people,
         'peopleX': people,
-        'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify','enslave','mind control'],
-        'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies','enslaves','mind controls'],
+        'verb': verb,
+        'verbS': verbS,
         'past verb': past_verb,
         'past verb e': past_verb,
-        'gverb': ['explode','die','dissapear','disintegrate','leave','apologize'],
-        'verbing': ['killing','murdering','hanging','removing','executing','hunting','torturing','eating','ignoring'],
-        'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
-                      'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto'],
+        'gverb': gverb,
+        'verbing': verbing,
+        'locations': locations,
         'going to': ['going to'],
         'am': ['am','am not'],
         'are': ['are','are not'],
@@ -56,7 +64,7 @@ def run(entry):
         'a': ['a'],
         'user': ['you'],
         'userA': ["you're"],
-        'answer': ['yes','no','maybe','probably','probably not'],
+        'answer': anss,
         'noun': nouns,
         'the noun': the_nouns,
         'the noun is': the_nouns,
@@ -65,9 +73,9 @@ def run(entry):
         'adjective': adjectives,
         'adjectiveQ': adjectives,
         'AMadjective': adjectives,
-        'punct': ['.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.',    '...','!','?'],
+        'punct': punct,
         'com': [','],
-        'conjunction': ['for','and','yet','so','because','or','or maybe']
+        'conjunction': conjunction
     }
     nxt = {
         'start': ['self','selfm','people','userS','userA','plur noun are','the noun is','answer'],

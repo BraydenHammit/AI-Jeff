@@ -1,4 +1,5 @@
 from run import run
+from base import base_vars
 import tkinter as tk
 
 root = tk.Tk()
@@ -8,6 +9,8 @@ root.config(bg='grey40')
 blink_state = 'o'
 repitition = 1
 counter = 0
+words = base_vars()
+structure = None
 
 images = {
     'def': tk.PhotoImage(file='images/default.png').subsample(3,3),

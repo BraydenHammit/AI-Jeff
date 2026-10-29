@@ -18,7 +18,8 @@ def run(entry):
              'stick of butter','cup of yogurt','cream','coconut','chocolate','chip','crisp','fry','okra','vegetable','watermelon','blueberry','blackberry','raspberry','orange','flamingo','job','clanker','crucifix','tesseract']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','your mother','the Earth','the One Ring','the Chosen One','the walls',
                  'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI','the FDA','the Secret Service','everything','the moon','the ceiling',
-                'the floor','the population','your father','the Executive Branch','the Legislative Branch','the Judicial Branch','the Cabinet','the Senate','the Supreme Court','the Dark Lord','the Demon King','the Doom Slayer','the Crucible','the Tesseract'] #the people
+                'the floor','the population','your father','the Executive Branch','the Legislative Branch','the Judicial Branch','the Cabinet','the Senate','the Supreme Court','the Dark Lord','the Demon King','the Doom Slayer','the Crucible','the Tesseract',
+                'the air','the atmosphere','everyone','the heir','the universe','the multiverse','the asteroid belt','the Roaring Knight','the Hollow Knight'] #the people
     plur_nouns = ['cats','rats','snakes','cheese','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chickens','dinosaurs',
                   'bees','mice','geese','desks','chairs','bananas','plants','trees','cacti','mooses','bums','men','women','boys','girls','children','fungi','infections','viruses','bacteria','amoebae','mushrooms','ghosts','skeletons','mummies','zombies',
                   'candies','pickles','apples','human rights','minions','dishes','penguins','canines','pencils','cabinets','aliens','cows','pigs','coconuts','chocolates','chips','crisps','fries','vegetables','watermelons','blueberries','blackberries',
@@ -26,8 +27,10 @@ def run(entry):
     people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter','Elon Musk',
             'some random guy','McDonalds','Sheldon1436','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Tom Holland','Spiderman',
             'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
-            'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ','Doomguy','Master Chief','Moonlight','Starlight','Bob','El Goblino']
-    past_verb = ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed']
+            'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ','Doomguy','Master Chief','Moonlight','Starlight','Bob','El Goblino','Beetlejuice','Mario',
+            'Luigi','Yoshi','Sonic','DougDoug','Douglas Scott Wreden','CaseOh','IShowSpeed','Dr. Doofenshmirtz','Sans','Papyrus','Flowery','Agent P.','Perry the Platypus','Candice','Phineas','Ferb','Abraham Lincoln','Creak','KreekCraft','Figure','Seek',
+            'George Washington']
+    past_verb = ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled']
 
     words = {
         'self': ['I'],
@@ -35,14 +38,14 @@ def run(entry):
         'selfX': ['me'],
         'people': people,
         'peopleX': people,
-        'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify'],
-        'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies'],
+        'verb': ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify','enslave','mind control'],
+        'verbS': ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies','enslaves','mind controls'],
         'past verb': past_verb,
         'past verb e': past_verb,
         'gverb': ['explode','die','dissapear','disintegrate','leave','apologize'],
         'verbing': ['killing','murdering','hanging','removing','executing','hunting','torturing','eating','ignoring'],
         'locations': ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
-                      'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia','the Backrooms'],
+                      'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto'],
         'going to': ['going to'],
         'am': ['am','am not'],
         'are': ['are','are not'],

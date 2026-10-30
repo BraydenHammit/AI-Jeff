@@ -49,8 +49,9 @@ def feedback(f=False):
     previd = 'start'
     if f == True:
         for id, word in zip(ids, wrds):
-            words[id].append(word)
-            structure[previd].append(id)
+            for _ in range(3):
+                words[id].append(word)
+                structure[previd].append(id)
             previd = id
     elif f == False:
         for id, word in zip(ids, wrds):

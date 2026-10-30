@@ -1,5 +1,5 @@
 from math import sqrt, floor
-from alph import alphabet
+from extra_code.alph import alphabet
 
 def run(inquiry,words,nxt):
     if inquiry == '': inquiry = ' ' 

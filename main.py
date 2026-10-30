@@ -1,5 +1,5 @@
-from run import run
-from base import base_vars
+from extra_code.run import run
+from extra_code.base import base_vars
 import tkinter as tk
 
 root = tk.Tk()

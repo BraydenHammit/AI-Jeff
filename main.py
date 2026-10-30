@@ -18,12 +18,13 @@ images = {
 }
 
 def r(_=None):
-    global teext, answer, counter, ids, wrds, feedbackfrm, upvote, downvote, midvote
+    global teext, answer, counter, ids, wrds, feedbackfrm, upvote, downvote, midvote, vote
     if counter == 0:
         feedbackfrm = tk.Frame(root,highlightbackground='grey40',bg='grey40')
         upvote = tk.Button(feedbackfrm,text='Good',command=lambda:feedback(f=True),fg='green',highlightbackground='grey40',bg='grey60')
-        midvote = tk.Button(feedbackfrm,text='Mid',command=lambda:feedback(None),highlightbackground='grey40',bg='grey60',fg="yellow")
+        midvote = tk.Button(feedbackfrm,text='Mid',command=lambda:feedback(None),highlightbackground='grey40',bg='grey60',fg="#e5e21a")
         downvote = tk.Button(feedbackfrm,text='Bad',command=lambda:feedback(f=False),highlightbackground='grey40',bg='grey60',fg="red")
+        vote = tk.Label(feedbackfrm,highlightbackground='grey40',bg='grey40',text='Vote: N/A')
         feedbackfrm.place(x=360,y=350)
         upvote.pack(side=tk.LEFT,padx=20)
         midvote.pack(side=tk.LEFT,padx=20)
@@ -32,6 +33,8 @@ def r(_=None):
         upvote.pack(side=tk.LEFT,padx=20)
         midvote.pack(side=tk.LEFT,padx=20)
         downvote.pack(side=tk.LEFT,padx=20)
+        try:vote.pack_forget()
+        except:None
     counter += 1
     answer, ids, wrds = run(entry.get(),words,structure)
     ids.pop(0)
@@ -63,6 +66,8 @@ def feedback(f=False):
     upvote.pack_forget()
     midvote.pack_forget()
     downvote.pack_forget()
+    vote.configure(text=f'                             Vote: {'Bad' if f == False else 'Good' if f == True else 'Neutral'}                             ',fg=('red' if f == False else 'lime' if f == True else "#ddff00"))
+    vote.pack()
 
 def nextlet(c):
     global teext

@@ -1,4 +1,5 @@
 def base_vars():
+    #Adjectives:
     adjectives = ['green','ugly','handsome','pretty','juicy','sentient','purple','fat','skinny','orange','red','demonic','high','low','slippery','rough','vibrant','large','massive','Scottish','disgusting','vile','godlike','good','bad','evil','pricey',
                   'smart','dumb','eligant','stupid','idiotic','intelligent','official','artificial','natural','German','dead','alive','goth','emo','egotistical','unrealistic','tasty','feminine','masculine','girly','manly','special','lonely','killer',
                   'intruiging','zesty','illegal','ethical','unethical','legal','religous','non-religous','colorful','Aetheist','British','French','English','American','Dutch','Czech','cheesy','wet','nasty','sticky','clean','rich','fancy','shiny','unintelligent',
@@ -6,6 +7,8 @@ def base_vars():
                   'humane','inhumane','toxic','poisonous','strange','dark','light','black','white','monotone','bouncy','empty','mixed','complete','crispy','tender','vegetative','underage','immature','mature','spicy','vigorous','magnetic','ferrous','non-ferrous',
                   'mettalic','acidic','colorlous','odorlous','popular','chunky','lame','disabled','enabled','obtuse','obese','overweight','underweight','acute','right','wrong','demented','clothed','naked','scared','afraid','daunting','burnt','cooked',
                  'cursed','broken','dreaded','hated','loved','common','rare','uncommon','epic','legendary','mythical','exotic','heroic','real','fake','faulty','functioning','threatening']
+
+    #Nouns:
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
              'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg','tariff','chicken','bee','salad','desk','mouse','chair','moose','cactus','plant','tree','banana','chair','bum',
              'man','woman','boy','girl','child','fungus','infection','virus','bacteria','amoeba','mushroom','ghost','skeleton','mummy','zombie','candy','pickle','apple','minion','dish','penguin','canine','pencil','cabinet','alien','cow','pig','gallon of milk',
@@ -13,24 +16,31 @@ def base_vars():
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','your mother','the Earth','the One Ring','the Chosen One','the wall',
                  'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI','the FDA','the Secret Service','everything','the moon','the ceiling',
                 'the floor','the population','your father','the Executive Branch','the Legislative Branch','the Judicial Branch','the Cabinet','the Senate','the Supreme Court','the Dark Lord','the Demon King','the Doom Slayer','the Crucible','the Tesseract',
-                'the air','the atmosphere','everyone','the heir','the universe','the multiverse','the asteroid belt','the Roaring Knight','the Hollow Knight','the Eternal Bob','the laws of physics'] #the people
+                'the air','the atmosphere','everyone','the heir','the universe','the multiverse','the asteroid belt','the Roaring Knight','the Hollow Knight','the Eternal Bob','the laws of physics','the fourth wall'] #the people
     plur_nouns = ['cats','rats','snakes','cheese','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chickens','dinosaurs',
                   'bees','mice','geese','desks','chairs','bananas','plants','trees','cacti','mooses','bums','men','women','boys','girls','children','fungi','infections','viruses','bacteria','amoebae','mushrooms','ghosts','skeletons','mummies','zombies',
                   'candies','pickles','apples','human rights','minions','dishes','penguins','canines','pencils','cabinets','aliens','cows','pigs','coconuts','chocolates','chips','crisps','fries','vegetables','watermelons','blueberries','blackberries',
                   'raspberries','oranges','flamingos','jobs','clankers','crucifixes','tesseracts']
-    people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter','Elon Musk',
-            'some random guy','McDonalds','Sheldon1436','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Tom Holland','Spiderman',
-            'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
-            'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ','Doomguy','Master Chief','Moonlight','Starlight','Bob','El Goblino','Beetlejuice','Mario',
-            'Luigi','Yoshi','Sonic','DougDoug','Douglas Scott Wreden','CaseOh','IShowSpeed','Dr. Doofenshmirtz','Sans','Papyrus','Flowery','Agent P.','Perry the Platypus','Candice','Phineas','Ferb','Abraham Lincoln','Creak','KreekCraft','Figure','Seek',
-            'George Washington','Rob','Sbeve','Terry','Larry','Killstreak','Guide','Mortis','Dave','Moai']
-    past_verb = ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled']
-    verb = ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify','enslave','mind control','threaten']
-    verbS = ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies','enslaves','mind controls','threatens']
+
+    #Verbs
+    past_verb = ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled',
+                 'broke']
+    verb = ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify','enslave','mind control','threaten','break']
+    verbS = ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies','enslaves','mind controls','threatens','breaks']
+    verbing = ['killing','murdering','hanging','removing','executing','hunting','torturing','eating','ignoring','threatening','breaking']
     gverb = ['explode','die','dissapear','disintegrate','leave','apologize']
-    verbing = ['killing','murdering','hanging','removing','executing','hunting','torturing','eating','ignoring','threatening']
+
+    #Proper Nouns:
+    people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter','Elon Musk',
+                'some random guy','McDonalds','Sheldon1436','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Tom Holland','Spiderman',
+                'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
+                'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ','Doomguy','Master Chief','Moonlight','Starlight','Bob','El Goblino','Beetlejuice','Mario',
+                'Luigi','Yoshi','Sonic','DougDoug','Douglas Scott Wreden','CaseOh','IShowSpeed','Dr. Doofenshmirtz','Sans','Papyrus','Flowery','Agent P.','Perry the Platypus','Candice','Phineas','Ferb','Abraham Lincoln','Creak','KreekCraft','Figure','Seek',
+                'George Washington','Rob','Sbeve','Terry','Larry','Killstreak','Guide','Mortis','Dave','Moai']
     locations = ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
                 'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto']
+
+    #Other:
     anss = ['yes','no','maybe','probably','probably not']
     conjunction = ['for','and','yet','so','because','or','or maybe']
     punct = ['.','.','.','.','.','.','.','.','.','.','.',    '...','!','?']

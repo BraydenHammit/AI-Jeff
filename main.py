@@ -9,8 +9,7 @@ root.config(bg='grey40')
 blink_state = 'o'
 repitition = 1
 counter = 0
-words = base_vars()
-structure = None
+words, structure = base_vars()
 
 images = {
     'def': tk.PhotoImage(file='images/default.png').subsample(3,3),
@@ -19,12 +18,51 @@ images = {
 }
 
 def r(_=None):
-    global teext, answer, counter
+    global teext, answer, counter, ids, wrds, feedbackfrm, upvote, downvote, midvote
+    if counter == 0:
+        feedbackfrm = tk.Frame(root,highlightbackground='grey40',bg='grey40')
+        upvote = tk.Button(feedbackfrm,text='Good',command=lambda:feedback(f=True),fg='green',highlightbackground='grey40',bg='grey60')
+        midvote = tk.Button(feedbackfrm,text='Mid',command=lambda:feedback(None),highlightbackground='grey40',bg='grey60',fg="yellow")
+        downvote = tk.Button(feedbackfrm,text='Bad',command=lambda:feedback(f=False),highlightbackground='grey40',bg='grey60',fg="red")
+        feedbackfrm.place(x=360,y=350)
+        upvote.pack(side=tk.LEFT,padx=20)
+        midvote.pack(side=tk.LEFT,padx=20)
+        downvote.pack(side=tk.LEFT,padx=20)
+    else:
+        upvote.pack(side=tk.LEFT,padx=20)
+        midvote.pack(side=tk.LEFT,padx=20)
+        downvote.pack(side=tk.LEFT,padx=20)
     counter += 1
-    answer = run(entry)
+    answer, ids, wrds = run(entry.get(),words,structure)
+    ids.pop(0)
+    ids.pop(0)
+    ids.pop(0)
     ans.configure(text='')
     teext = ''
     root.after(5,lambda:nextlet(counter))
+
+def feedback(f=False):
+    global ids, wrds
+    previd = 'start'
+    if f == True:
+        for id, word in zip(ids, wrds):
+            words[id].append(word)
+            structure[previd].append(id)
+            previd = id
+    elif f == False:
+        for id, word in zip(ids, wrds):
+            if word in words[id]:
+                words[id].pop(words[id].index(word))
+            if not (word in words[id]):
+                words[id].append(word)
+            if id in structure[previd]:
+                structure[previd].pop(structure[previd].index(id))
+            if not (id in structure[previd]):
+                structure[previd].append(id)
+            previd = id
+    upvote.pack_forget()
+    midvote.pack_forget()
+    downvote.pack_forget()
 
 def nextlet(c):
     global teext

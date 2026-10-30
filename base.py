@@ -24,11 +24,11 @@ def base_vars():
 
     #Verbs
     past_verb = ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled',
-                 'broke']
-    verb = ['hate','love','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify','enslave','mind control','threaten','break']
+                 'broke','saw']
+    verb = ['hate','love','see','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify','enslave','mind control','threaten','break']
     verbS = ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies','enslaves','mind controls','threatens','breaks']
-    verbing = ['killing','murdering','hanging','removing','executing','hunting','torturing','eating','ignoring','threatening','breaking']
-    gverb = ['explode','die','dissapear','disintegrate','leave','apologize']
+    verbing = ['killing','murdering','hanging','removing','executing','hunting','torturing','eating','ignoring','threatening','breaking','seeing']
+    gverb = ['explode','die','dissapear','disintegrate','leave','apologize','cry','weep','rejoice']
 
     #Proper Nouns:
     people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter','Elon Musk',

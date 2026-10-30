@@ -93,7 +93,7 @@ def blink():
     if blink_state == 'o':
         blink_state = 'c'
         img.configure(image=images['blk'])
-        root.after(100,blink)
+        root.after(50 + ((repitition * 2) % 300),blink)
     elif blink_state == 'c':
         blink_state = 'o'
         img.configure(image=images['def'])

@@ -36,7 +36,7 @@ def base_vars():
                 'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
                 'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ','Doomguy','Master Chief','Moonlight','Starlight','Bob','El Goblino','Beetlejuice','Mario',
                 'Luigi','Yoshi','Sonic','DougDoug','Douglas Scott Wreden','CaseOh','IShowSpeed','Dr. Doofenshmirtz','Sans','Papyrus','Flowery','Agent P.','Perry the Platypus','Candice','Phineas','Ferb','Abraham Lincoln','Creak','KreekCraft','Figure','Seek',
-                'George Washington','Rob','Sbeve','Terry','Larry','Killstreak','Guide','Mortis','Dave','Moai']
+                'George Washington','Rob','Sbeve','Terry','Larry','Killstreak','Guide','Mortis','Dave','Moai','Gordon Ramsey']
     locations = ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
                 'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto']
 

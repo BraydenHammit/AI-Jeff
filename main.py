@@ -49,16 +49,17 @@ def feedback(f=False):
     previd = 'start'
     if f == True:
         for id, word in zip(ids, wrds):
-            for _ in range(3):
+            for _ in range(5):
                 words[id].append(word)
                 structure[previd].append(id)
             previd = id
     elif f == False:
         for id, word in zip(ids, wrds):
-            if word in words[id]:
-                words[id].pop(words[id].index(word))
-            if not (word in words[id]):
-                words[id].append(word)
+            for _ in range(2):
+                if word in words[id]:
+                    words[id].pop(words[id].index(word))
+                if not (word in words[id]):
+                    words[id].append(word)
             if id in structure[previd]:
                 structure[previd].pop(structure[previd].index(id))
             if not (id in structure[previd]):

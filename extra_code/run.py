@@ -26,10 +26,12 @@ def run(inquiry,words,nxt):
         tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 7) % len(t)]
         char = inquiry[(loop - 2) % len(inquiry)]
         choices = words[tt]
-        if inquiry[(loop + iteration) % len(inquiry)].lower() == inquiry[(loop + iteration) % len(inquiry)]:
-            word = choices[(alphabet(char) - 1) % len(choices)]
-        else:
-            word = choices[(alphabet(char) + 1) % len(choices)]
+        if inquiry[(loop + iteration) % len(inquiry)].lower() == inquiry[(loop + iteration) % len(inquiry)].capitalize():
+            word = choices[(alphabet(char)) % len(choices)]
+        elif inquiry[(loop + iteration) % len(inquiry)].lower() == inquiry[(loop + iteration) % len(inquiry)]:
+            word = choices[(alphabet(char)-1) % len(choices)]
+        elif inquiry[(loop + iteration) % len(inquiry)].capitalize() == inquiry[(loop + iteration) % len(inquiry)]:
+            word = choices[(alphabet(char)+1) % len(choices)]
         if xqc == 'a' and ((word[0].lower() in ('i','o','u','a','e')) or (word == 'honest')):
             answer += 'n'
         if tt not in ('punct','com'):
@@ -55,10 +57,12 @@ def run(inquiry,words,nxt):
         tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 5) % len(t)]
         char = inquiry[(loop - 2) % len(inquiry)]
         choices = words[tt]
-        if inquiry[(loop + iteration) % len(inquiry)].lower() == inquiry[(loop + iteration) % len(inquiry)]:
-            word = choices[(alphabet(char) - 1) % len(choices)]
-        else:
-            word = choices[(alphabet(char) + 1) % len(choices)]
+        if inquiry[(loop + iteration) % len(inquiry)].lower() == inquiry[(loop + iteration) % len(inquiry)].capitalize():
+            word = choices[(alphabet(char)) % len(choices)]
+        elif inquiry[(loop + iteration) % len(inquiry)].lower() == inquiry[(loop + iteration) % len(inquiry)]:
+            word = choices[(alphabet(char)-1) % len(choices)]
+        elif inquiry[(loop + iteration) % len(inquiry)].capitalize() == inquiry[(loop + iteration) % len(inquiry)]:
+            word = choices[(alphabet(char)+1) % len(choices)]
         if xqc == 'a' and ((word[0].lower() in ('i','o','u','a','e')) or (word == 'honest')):
             answer += 'n'
         if tt not in ('punct','com'):

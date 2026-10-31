@@ -13,15 +13,16 @@ def base_vars():
              'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg','tariff','chicken','bee','salad','desk','mouse','chair','moose','cactus','plant','tree','banana','chair','bum',
              'man','woman','boy','girl','child','fungus','infection','virus','bacteria','amoeba','mushroom','ghost','skeleton','mummy','zombie','candy','pickle','apple','minion','dish','penguin','canine','pencil','cabinet','alien','cow','pig','gallon of milk',
              'stick of butter','cup of yogurt','cream','coconut','chocolate','chip','crisp','fry','okra','vegetable','watermelon','blueberry','blackberry','raspberry','orange','flamingo','job','clanker','crucifix','tesseract','prophet','prophecy',
-             'Korok','mother','father','son','daughter','niece','nephew','brother','sister','aunt','uncle','grandmother','grandfather']
+             'Korok','mother','father','son','daughter','niece','nephew','brother','sister','aunt','uncle','grandmother','grandfather','burger','hamburger']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','the Earth','the One Ring','the Chosen One','the wall','the prophecy','the Dictionary',
                  'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI','the FDA','the Secret Service','everything','the moon','the ceiling',
                 'the floor','the population','the Executive Branch','the Legislative Branch','the Judicial Branch','the Cabinet','the Senate','the Supreme Court','the Dark Lord','the Demon King','the Doom Slayer','the Crucible','the Tesseract',
                 'the air','the atmosphere','everyone','the heir','the universe','the multiverse','the asteroid belt','the Roaring Knight','the Hollow Knight','the Eternal Bob','the laws of physics','the fourth wall'] #the people
-    plur_nouns = ['cats','rats','snakes','cheese','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chickens','dinosaurs',
+    plur_nouns = ['cats','rats','snakes','cheeses','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chickens','dinosaurs',
                   'bees','mice','geese','desks','chairs','bananas','plants','trees','cacti','mooses','bums','men','women','boys','girls','children','fungi','infections','viruses','bacteria','amoebae','mushrooms','ghosts','skeletons','mummies','zombies',
                   'candies','pickles','apples','human rights','minions','dishes','penguins','canines','pencils','cabinets','aliens','cows','pigs','coconuts','chocolates','chips','crisps','fries','vegetables','watermelons','blueberries','blackberries',
-                  'raspberries','oranges','flamingos','jobs','clankers','crucifixes','tesseracts','prophets','prophecies','Koroks','mothers','fathers','sons','daughters','nieces','nephews','brothers','sisters','aunts','uncles','grandmothers','grandfathers']
+                  'raspberries','oranges','flamingos','jobs','clankers','crucifixes','tesseracts','prophets','prophecies','Koroks','mothers','fathers','sons','daughters','nieces','nephews','brothers','sisters','aunts','uncles','grandmothers','grandfathers',
+                  'burgers','cheesburgers','hamburgers']
 
     #Verbs
     past_verb = ['hated','loved','ate','murdered','owned','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled','prophesized',
@@ -67,6 +68,7 @@ def base_vars():
         'pronounA': ['you','they','we'],
         'pronounX': ['me','him','her','you','them','us','it'],
         "pronoun is": ["I'm","I'm not","you're","you're not","he's","he's not","she's","she's not","they're","they're not","we're","we're not","it's","it's not"],
+        "pronounW": ["I'll","I'll not","you'll","you'll not","he'll","he'll not","she'll","she'll not","they'll","they'll not","we'll","we'll not","it'll","it'll not"],
         'people': people,
         'peopleX': people,
         'verb': verb,
@@ -85,6 +87,7 @@ def base_vars():
         'was': ['was','was not',"wasn't"],
         'be': ['be'],
         'from': ['from'],
+        'will': ['will','will not',"won't"],
         'a': ['a'],
         'answer': anss,
         'noun': nouns,
@@ -102,14 +105,15 @@ def base_vars():
         'conjunction': conjunction
     }, {
         'start': stem,
-        'pronoun': ['verb','am','was','past verb'],
-        'pronounI': ['verbS','is','was','past verb'],
-        'pronounA': ['verb','are','was','past verb'],
-        'people': ['verbS','is','was','past verb'],
+        'pronoun': ['verb','am','was','past verb','will'],
+        'pronounI': ['verbS','is','was','past verb','will'],
+        'pronounA': ['verb','are','were','past verb','will'],
+        'people': ['verbS','is','was','past verb','will'],
         'peopleX': end,
         'am': are_am_is,
         'is': are_am_is,
         'pronoun is': are_am_is,
+        'pronounW': ['verb','gverb'],
         'verb': ['plur noun','adjective','the noun','locations','pronounX'],
         'verbing': ['plur noun','a','adjective','the noun','locations','pronounX'],
         'verbS': ['plur noun','pronounX','the noun','locations'],
@@ -121,12 +125,13 @@ def base_vars():
         'were': are_am_is,
         'noun': end,
         'the noun': end,
-        'the noun is': ['is','was','verbS','past verb'],
-        'location is': ['is','was','verbS','past verb'],
-        'plur noun are': ['are','were','past verb','verb'],
+        'the noun is': ['is','was','verbS','past verb','will'],
+        'location is': ['is','was','verbS','past verb','will'],
+        'plur noun are': ['are','were','past verb','verb','will'],
         'plur noun': end,
         'adjective': ['plur noun'],
         'from': ['locations'],
+        'will': ['verb','gverb'],
         'going to': ['locations','gverb','verb','be'],
         'locations': end,
         'AMadjective': end,

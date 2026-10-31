@@ -13,7 +13,7 @@ def base_vars():
              'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg','tariff','chicken','bee','salad','desk','mouse','chair','moose','cactus','plant','tree','banana','chair','bum',
              'man','woman','boy','girl','child','fungus','infection','virus','bacteria','amoeba','mushroom','ghost','skeleton','mummy','zombie','candy','pickle','apple','minion','dish','penguin','canine','pencil','cabinet','alien','cow','pig','gallon of milk',
              'stick of butter','cup of yogurt','cream','coconut','chocolate','chip','crisp','fry','okra','vegetable','watermelon','blueberry','blackberry','raspberry','orange','flamingo','job','clanker','crucifix','tesseract','prophet','prophecy',
-             'Korok','mother','father','son','daughter','niece','nephew','brother','sister','aunt','uncle','grandmother','grandfather','burger','hamburger']
+             'Korok','mother','father','son','daughter','niece','nephew','brother','sister','aunt','uncle','grandmother','grandfather','burger','hamburger','hat']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','the Earth','the One Ring','the Chosen One','the wall','the prophecy','the Dictionary',
                  'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI','the FDA','the Secret Service','everything','the moon','the ceiling',
                 'the floor','the population','the Executive Branch','the Legislative Branch','the Judicial Branch','the Cabinet','the Senate','the Supreme Court','the Dark Lord','the Demon King','the Doom Slayer','the Crucible','the Tesseract',
@@ -22,7 +22,7 @@ def base_vars():
                   'bees','mice','geese','desks','chairs','bananas','plants','trees','cacti','mooses','bums','men','women','boys','girls','children','fungi','infections','viruses','bacteria','amoebae','mushrooms','ghosts','skeletons','mummies','zombies',
                   'candies','pickles','apples','human rights','minions','dishes','penguins','canines','pencils','cabinets','aliens','cows','pigs','coconuts','chocolates','chips','crisps','fries','vegetables','watermelons','blueberries','blackberries',
                   'raspberries','oranges','flamingos','jobs','clankers','crucifixes','tesseracts','prophets','prophecies','Koroks','mothers','fathers','sons','daughters','nieces','nephews','brothers','sisters','aunts','uncles','grandmothers','grandfathers',
-                  'burgers','cheesburgers','hamburgers']
+                  'burgers','cheesburgers','hamburgers','hat']
 
     #Verbs
     past_verb = ['hated','loved','ate','murdered','owned','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled','prophesized',
@@ -39,7 +39,7 @@ def base_vars():
                 'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
                 'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ','Doomguy','Master Chief','Moonlight','Starlight','Bob','El Goblino','Beetlejuice','Mario',
                 'Luigi','Yoshi','Sonic','DougDoug','Douglas Scott Wreden','CaseOh','IShowSpeed','Dr. Doofenshmirtz','Sans','Papyrus','Flowery','Agent P.','Perry the Platypus','Candice','Phineas','Ferb','Abraham Lincoln','Creak','KreekCraft','Figure','Seek',
-                'George Washington','Rob','Sbeve','Terry','Larry','Guide','Mortis','Dave','Gordon Ramsey','Santa Claus','Mrs. Claus','John Halloween','John Pork','Honcho','Ganon','Ganondorf','Zelda','Link']
+                'George Washington','Rob','Sbeve','Terry','Larry','Guide','Mortis','Dave','Gordon Ramsey','Santa Claus','Mrs. Claus','John Halloween','John Pork','Honcho','Ganon','Ganondorf','Zelda','Link','Sir Abraham Creakstopher II']
     locations = ['China','the United States of America','Texas','Germany','France','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the shadow realm','Area 51','the End','the Hotel','the Matrix','the Stairwell',
                 'the Overworld','the Sift','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto','the Backdoor']
     locationsss = ['the Netherlands','the depths','the Mines','the Outdoors','the indoors','the Archives','the Rooms','the Roblox Headquarters']

@@ -40,9 +40,9 @@ def base_vars():
                 'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ','Doomguy','Master Chief','Moonlight','Starlight','Bob','El Goblino','Beetlejuice','Mario',
                 'Luigi','Yoshi','Sonic','DougDoug','Douglas Scott Wreden','CaseOh','IShowSpeed','Dr. Doofenshmirtz','Sans','Papyrus','Flowery','Agent P.','Perry the Platypus','Candice','Phineas','Ferb','Abraham Lincoln','Creak','KreekCraft','Figure','Seek',
                 'George Washington','Rob','Sbeve','Terry','Larry','Guide','Mortis','Dave','Gordon Ramsey','Santa Claus','Mrs. Claus','John Halloween','John Pork','Honcho','Ganon','Ganondorf','Zelda','Link']
-    locations = ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End','the Hotel',
-                'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto','the Mines','the Backdoor',
-                'the Archives','the Rooms','the Stairwell','the Outdoors','the indoors','the Matrix']
+    locations = ['China','the United States of America','Texas','Germany','France','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the shadow realm','Area 51','the End','the Hotel','the Matrix','the Stairwell',
+                'the Overworld','the Sift','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto','the Backdoor']
+    locationsss = ['the Netherlands','the depths','the Mines','the Outdoors','the indoors','the Archives','the Rooms','the Roblox Headquarters']
 
     #Other:
     anss = ['yes','no','maybe','probably','probably not']
@@ -53,8 +53,8 @@ def base_vars():
 
 
     #Structure:
-    are_am_is = ['AMadjective','a','the noun','locations','from','going to','peopleX','verbing','pronounX','ownerships','ownershipE']
-    stem = ['pronoun','pronounI','pronounA','pronoun is','people','plur noun are','the noun is','location is','answer','ownership']
+    are_am_is = ['AMadjective','a','the noun','locations','locationsS','from','going to','peopleX','verbing','pronounX','ownerships','ownershipE']
+    stem = ['pronoun','pronounI','pronounA','pronoun is','people','plur noun are','the noun is','location is','locationS is','answer','ownership']
     stem2 = stem.copy()
     stem2.remove('answer')
     end = ['punct','punct','punct','com']
@@ -78,6 +78,8 @@ def base_vars():
         'gverb': gverb,
         'verbing': verbing,
         'locations': locations,
+        'locationsS': locationsss,
+        'locationsS are': locationsss,
         'location is': locations,
         'going to': ['going to'],
         'am': ['am','am not'],
@@ -114,11 +116,11 @@ def base_vars():
         'is': are_am_is,
         'pronoun is': are_am_is,
         'pronounW': ['verb','gverb'],
-        'verb': ['plur noun','adjective','the noun','locations','pronounX'],
-        'verbing': ['plur noun','a','adjective','the noun','locations','pronounX'],
-        'verbS': ['plur noun','pronounX','the noun','locations'],
+        'verb': ['plur noun','adjective','the noun','locations','locationsS','pronounX'],
+        'verbing': ['plur noun','a','adjective','the noun','locations','locationsS','pronounX'],
+        'verbS': ['plur noun','pronounX','the noun','locations','locationsS'],
         'gverb': end,
-        'past verb': ['plur noun','pronounX','the noun','locations','a'],
+        'past verb': ['plur noun','pronounX','the noun','locations','locationsS','a'],
         'pronounX': end,
         'are': are_am_is,
         'was': are_am_is,
@@ -127,13 +129,15 @@ def base_vars():
         'the noun': end,
         'the noun is': ['is','was','verbS','past verb','will'],
         'location is': ['is','was','verbS','past verb','will'],
+        'locationsS are': ['are','were','verb','past verb','will'],
         'plur noun are': ['are','were','past verb','verb','will'],
         'plur noun': end,
         'adjective': ['plur noun'],
-        'from': ['locations'],
+        'from': ['locations','locationsS'],
         'will': ['verb','gverb'],
-        'going to': ['locations','gverb','verb','be'],
+        'going to': ['locations','locationsS','gverb','verb','be'],
         'locations': end,
+        'locationsS': end,
         'AMadjective': end,
         'be': ['AMadjective','a','past verb e','ownerships'],
         'com': ['conjunction'],

@@ -54,7 +54,7 @@ def base_vars():
 
     #Structure:
     are_am_is = ['AMadjective','a','the noun','locations','locationsS','from','going to','peopleX','verbing','pronounX','ownerships','ownershipE']
-    stem = ['pronoun','pronounI','pronounA','pronoun is','people','plur noun are','the noun is','location is','locationS is','answer','ownership']
+    stem = ['pronoun','pronounI','pronounA','pronoun is','people','plur noun are','the noun is','location is','locationsS are','answer','ownership']
     stem2 = stem.copy()
     stem2.remove('answer')
     end = ['punct','punct','punct','com']

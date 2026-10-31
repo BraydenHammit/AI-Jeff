@@ -48,7 +48,7 @@ def base_vars():
     anss = ['yes','no','maybe','probably','probably not']
     conjunction = ['for','and','yet','so','because','or','or maybe']
     punct = ['.','.','.','.','.','.','.','.','.','.','.',    '...','!','?']
-    own = ['his','her','my','your','their']
+    own = ['his','her','my','your','their','its','our']
 
 
 
@@ -96,10 +96,12 @@ def base_vars():
         'nounO': nouns,
         'the noun': the_nouns,
         'the noun is': the_nouns,
+        'plur nounO': plur_nouns,
         'plur noun': plur_nouns,
         'plur noun are': plur_nouns,
         'adjective': adjectives,
         'adjectiveO': adjectives,
+        'adjectiveOS': adjectives,
         'adjectiveQ': adjectives,
         'AMadjective': adjectives,
         'punct': punct,
@@ -148,8 +150,10 @@ def base_vars():
         'answer': end,
         'past verb e': end,
         'ownerships': end,
-        'ownership': ['adjectiveO','nounO'],
+        'ownership': ['adjectiveO','nounO','plur nounO','adjectiveOS'],
         'adjectiveO': ['nounO'],
+        'adjectiveOS': ['plur nounO'],
         'nounO': ['is','was','verbS','past verb'],
+        'plur nounO': ['are','were','verb','past verb'],
         'ownershipE': ['adjectiveQ','noun']
     }

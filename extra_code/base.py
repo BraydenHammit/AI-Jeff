@@ -6,7 +6,7 @@ def base_vars():
                   'confused','slow','fast','sorry','gold','blue','yellow','pink','grey','brown','rainbow','clear','supportive','helpful','honest','dishonest','trustworthy','untrustworthy','loyal','universal','spiteful','helpless','bald','sour','bitter',
                   'humane','inhumane','toxic','poisonous','strange','dark','light','black','white','monotone','bouncy','empty','mixed','complete','crispy','tender','vegetative','underage','immature','mature','spicy','vigorous','magnetic','ferrous','non-ferrous',
                   'mettalic','acidic','colorlous','odorlous','popular','chunky','lame','disabled','enabled','obtuse','obese','overweight','underweight','acute','right','wrong','demented','clothed','naked','scared','afraid','daunting','burnt','cooked',
-                 'cursed','broken','dreaded','hated','loved','common','rare','uncommon','epic','legendary','mythical','exotic','heroic','real','fake','faulty','functioning','threatening','sleepy','tired','caffeinated']
+                 'cursed','broken','dreaded','hated','loved','common','rare','uncommon','epic','legendary','mythical','exotic','heroic','real','fake','faulty','functioning','threatening','sleepy','tired','caffeinated','precious']
 
     #Nouns:
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
@@ -40,7 +40,7 @@ def base_vars():
                 'George Washington','Rob','Sbeve','Terry','Larry','Guide','Mortis','Dave','Gordon Ramsey','Santa Claus','Mrs. Claus','John Halloween','John Pork','Honcho']
     locations = ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End','the Hotel',
                 'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto','the Mines','the Backdoor',
-                'the Archives','the Rooms','the Stairwell','the Outdoors','the indoors']
+                'the Archives','the Rooms','the Stairwell','the Outdoors','the indoors','the Matrix']
 
     #Other:
     anss = ['yes','no','maybe','probably','probably not']
@@ -50,8 +50,8 @@ def base_vars():
 
 
     #Structure:
-    are_am_is = ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX']
-    stem = ['self','selfm','people','userS','userA','plur noun are','the noun is','answer']
+    are_am_is = ['AMadjective','a','the noun','location','from','going to','peopleX','verbing','user','selfX']
+    stem = ['self','selfm','people','userS','userA','plur noun are','the noun is','location is','answer']
     end = ['punct','punct','punct','com']
 
     return {
@@ -67,6 +67,7 @@ def base_vars():
         'gverb': gverb,
         'verbing': verbing,
         'locations': locations,
+        'location is': locations,
         'going to': ['going to'],
         'am': ['am','am not'],
         'are': ['are','are not'],
@@ -97,11 +98,11 @@ def base_vars():
         'am': are_am_is,
         'selfm': are_am_is,
         'is': are_am_is,
-        'verb': ['plur noun','adjective','the noun'],
-        'verbing': ['plur noun','a','adjective','the noun'],
-        'verbS': ['plur noun','user','selfX','the noun'],
+        'verb': ['plur noun','adjective','the noun','locations'],
+        'verbing': ['plur noun','a','adjective','the noun','locations'],
+        'verbS': ['plur noun','user','selfX','the noun','locations'],
         'gverb': end,
-        'past verb': ['plur noun','user','selfX','the noun','a'],
+        'past verb': ['plur noun','user','selfX','the noun','locations','a'],
         'user': end,
         'selfX': end,
         'userS': ['are'],
@@ -110,6 +111,7 @@ def base_vars():
         'noun': end,
         'the noun': end,
         'the noun is': ['is','past verb'],
+        'location is': ['is','past verb'],
         'plur noun are': ['are','past verb'],
         'plur noun': end,
         'adjective': ['plur noun'],

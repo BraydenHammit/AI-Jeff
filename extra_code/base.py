@@ -50,7 +50,7 @@ def base_vars():
 
 
     #Structure:
-    are_am_is = ['AMadjective','a','the noun','location','from','going to','peopleX','verbing','user','selfX']
+    are_am_is = ['AMadjective','a','the noun','locations','from','going to','peopleX','verbing','user','selfX']
     stem = ['self','selfm','people','userS','userA','plur noun are','the noun is','location is','answer']
     end = ['punct','punct','punct','com']
 

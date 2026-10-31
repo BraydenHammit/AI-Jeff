@@ -47,15 +47,21 @@ def base_vars():
     anss = ['yes','no','maybe','probably','probably not']
     conjunction = ['for','and','yet','so','because','or','or maybe']
     punct = ['.','.','.','.','.','.','.','.','.','.','.',    '...','!','?']
+    own = ['his','her','my','your','their']
 
 
 
     #Structure:
-    are_am_is = ['AMadjective','a','the noun','locations','from','going to','peopleX','verbing','user','selfX']
-    stem = ['self','selfm','people','userS','userA','plur noun are','the noun is','location is','answer']
+    are_am_is = ['AMadjective','a','the noun','locations','from','going to','peopleX','verbing','user','selfX','ownerships','ownershipE']
+    stem = ['self','selfm','people','userS','userA','plur noun are','the noun is','location is','answer','ownership']
+    stem2 = stem.copy()
+    stem2.remove('answer')
     end = ['punct','punct','punct','com']
 
     return {
+        'ownership': own,
+        'ownershipE': own,
+        'ownerships': ['his','hers','mine','yours','theirs'],
         'self': ['I'],
         "selfm": ["I'm","I'm not"],
         'selfX': ['me'],
@@ -71,8 +77,10 @@ def base_vars():
         'location is': locations,
         'going to': ['going to'],
         'am': ['am','am not','will','will not'],
-        'are': ['are','are not',"aren't",'were','were not',"weren't"],
-        'is': ['is','is not',"isn't",'was','was not',"wasn't"],
+        'are': ['are','are not',"aren't"],
+        'were': ['were','were not',"weren't"],
+        'is': ['is','is not',"isn't"],
+        'was': ['was','was not',"wasn't"],
         'be': ['be'],
         'userS': ['you'],
         'from': ['from'],
@@ -81,11 +89,13 @@ def base_vars():
         'userA': ["you're"],
         'answer': anss,
         'noun': nouns,
+        'nounO': nouns,
         'the noun': the_nouns,
         'the noun is': the_nouns,
         'plur noun': plur_nouns,
         'plur noun are': plur_nouns,
         'adjective': adjectives,
+        'adjectiveO': adjectives,
         'adjectiveQ': adjectives,
         'AMadjective': adjectives,
         'punct': punct,
@@ -93,8 +103,8 @@ def base_vars():
         'conjunction': conjunction
     }, {
         'start': stem,
-        'self': ['verb','am','past verb'],
-        'people': ['verbS','is','past verb'],
+        'self': ['verb','am','was','past verb'],
+        'people': ['verbS','is','was','past verb'],
         'peopleX': end,
         'am': are_am_is,
         'selfm': are_am_is,
@@ -108,24 +118,31 @@ def base_vars():
         'selfX': end,
         'userS': ['are'],
         'are': are_am_is,
+        'was': are_am_is,
+        'were': are_am_is,
         'userA': are_am_is,
         'noun': end,
         'the noun': end,
-        'the noun is': ['is','past verb'],
-        'location is': ['is','past verb'],
-        'plur noun are': ['are','past verb'],
+        'the noun is': ['is','was','verbS','past verb'],
+        'location is': ['is','was','verbS','past verb'],
+        'plur noun are': ['are','were','past verb','verb'],
         'plur noun': end,
         'adjective': ['plur noun'],
         'from': ['locations'],
         'going to': ['locations','gverb','verb','be'],
         'locations': end,
         'AMadjective': end,
-        'be': ['AMadjective','a','past verb e'],
+        'be': ['AMadjective','a','past verb e','ownerships'],
         'com': ['conjunction'],
-        'conjunction': stem,
+        'conjunction': stem2,
         'adjectiveQ': ['noun'],
         'punct': stem,
         'a': ['adjectiveQ','noun'],
         'answer': end,
-        'past verb e': end
+        'past verb e': end,
+        'ownerships': end,
+        'ownership': ['adjectiveO','nounO'],
+        'adjectiveO': ['nounO'],
+        'nounO': ['is','was','verbS','past verb'],
+        'ownershipE': ['adjectiveQ','noun']
     }

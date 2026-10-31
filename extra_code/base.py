@@ -78,7 +78,7 @@ def base_vars():
         'locations': locations,
         'location is': locations,
         'going to': ['going to'],
-        'am': ['am','am not','will','will not'],
+        'am': ['am','am not'],
         'are': ['are','are not',"aren't"],
         'were': ['were','were not',"weren't"],
         'is': ['is','is not',"isn't"],

@@ -103,7 +103,7 @@ def base_vars():
     }, {
         'start': stem,
         'pronoun': ['verb','am','was','past verb'],
-        'pronounI': ['verb','is','was','past verb'],
+        'pronounI': ['verbS','is','was','past verb'],
         'pronounA': ['verb','are','was','past verb'],
         'people': ['verbS','is','was','past verb'],
         'peopleX': end,

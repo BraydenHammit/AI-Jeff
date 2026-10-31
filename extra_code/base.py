@@ -13,15 +13,15 @@ def base_vars():
              'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg','tariff','chicken','bee','salad','desk','mouse','chair','moose','cactus','plant','tree','banana','chair','bum',
              'man','woman','boy','girl','child','fungus','infection','virus','bacteria','amoeba','mushroom','ghost','skeleton','mummy','zombie','candy','pickle','apple','minion','dish','penguin','canine','pencil','cabinet','alien','cow','pig','gallon of milk',
              'stick of butter','cup of yogurt','cream','coconut','chocolate','chip','crisp','fry','okra','vegetable','watermelon','blueberry','blackberry','raspberry','orange','flamingo','job','clanker','crucifix','tesseract','prophet','prophecy',
-             'Korok']
-    the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','your mother','the Earth','the One Ring','the Chosen One','the wall',
+             'Korok','mother','father','son','daughter','niece','nephew','brother','sister','aunt','uncle','grandmother','grandfather']
+    the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','the Earth','the One Ring','the Chosen One','the wall','the prophecy','the Dictionary',
                  'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI','the FDA','the Secret Service','everything','the moon','the ceiling',
-                'the floor','the population','your father','the Executive Branch','the Legislative Branch','the Judicial Branch','the Cabinet','the Senate','the Supreme Court','the Dark Lord','the Demon King','the Doom Slayer','the Crucible','the Tesseract',
+                'the floor','the population','the Executive Branch','the Legislative Branch','the Judicial Branch','the Cabinet','the Senate','the Supreme Court','the Dark Lord','the Demon King','the Doom Slayer','the Crucible','the Tesseract',
                 'the air','the atmosphere','everyone','the heir','the universe','the multiverse','the asteroid belt','the Roaring Knight','the Hollow Knight','the Eternal Bob','the laws of physics','the fourth wall'] #the people
     plur_nouns = ['cats','rats','snakes','cheese','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chickens','dinosaurs',
                   'bees','mice','geese','desks','chairs','bananas','plants','trees','cacti','mooses','bums','men','women','boys','girls','children','fungi','infections','viruses','bacteria','amoebae','mushrooms','ghosts','skeletons','mummies','zombies',
                   'candies','pickles','apples','human rights','minions','dishes','penguins','canines','pencils','cabinets','aliens','cows','pigs','coconuts','chocolates','chips','crisps','fries','vegetables','watermelons','blueberries','blackberries',
-                  'raspberries','oranges','flamingos','jobs','clankers','crucifixes','tesseracts','prophets','prophecies','Koroks']
+                  'raspberries','oranges','flamingos','jobs','clankers','crucifixes','tesseracts','prophets','prophecies','Koroks','mothers','fathers','sons','daughters','nieces','nephews','brothers','sisters','aunts','uncles','grandmothers','grandfathers']
 
     #Verbs
     past_verb = ['hated','loved','ate','murdered','owned','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled','prophesized',

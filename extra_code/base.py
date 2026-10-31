@@ -29,7 +29,7 @@ def base_vars():
     verbS = ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies','enslaves','mind controls','threatens','breaks',
              'awakens','rouses']
     verbing = ['killing','murdering','hanging','removing','executing','hunting','torturing','eating','ignoring','threatening','breaking','seeing','waking','rousing']
-    gverb = ['explode','die','dissapear','disintegrate','leave','apologize','cry','weep','rejoice','awaken','sleep']
+    gverb = ['explode','die','dissapear','disintegrate','leave','apologize','cry','weep','rejoice','awaken','sleep','sneeze','cough','yawn','smile','frown','grimace','faint']
 
     #Proper Nouns:
     people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter','Elon Musk',
@@ -37,9 +37,10 @@ def base_vars():
                 'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
                 'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ','Doomguy','Master Chief','Moonlight','Starlight','Bob','El Goblino','Beetlejuice','Mario',
                 'Luigi','Yoshi','Sonic','DougDoug','Douglas Scott Wreden','CaseOh','IShowSpeed','Dr. Doofenshmirtz','Sans','Papyrus','Flowery','Agent P.','Perry the Platypus','Candice','Phineas','Ferb','Abraham Lincoln','Creak','KreekCraft','Figure','Seek',
-                'George Washington','Rob','Sbeve','Terry','Larry','Guide','Mortis','Dave','Gordon Ramsey','Santa Claus','Mrs. Claus','John Halloween','John Pork']
-    locations = ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
-                'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto']
+                'George Washington','Rob','Sbeve','Terry','Larry','Guide','Mortis','Dave','Gordon Ramsey','Santa Claus','Mrs. Claus','John Halloween','John Pork','Honcho']
+    locations = ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End','the Hotel',
+                'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto','the Mines','the Backdoor',
+                'the Archives','the Rooms','the Stairwell','the Outdoors','the indoors']
 
     #Other:
     anss = ['yes','no','maybe','probably','probably not']

@@ -6,7 +6,7 @@ def base_vars():
                   'confused','slow','fast','sorry','gold','blue','yellow','pink','grey','brown','rainbow','clear','supportive','helpful','honest','dishonest','trustworthy','untrustworthy','loyal','universal','spiteful','helpless','bald','sour','bitter',
                   'humane','inhumane','toxic','poisonous','strange','dark','light','black','white','monotone','bouncy','empty','mixed','complete','crispy','tender','vegetative','underage','immature','mature','spicy','vigorous','magnetic','ferrous','non-ferrous',
                   'mettalic','acidic','colorlous','odorlous','popular','chunky','lame','disabled','enabled','obtuse','obese','overweight','underweight','acute','right','wrong','demented','clothed','naked','scared','afraid','daunting','burnt','cooked',
-                 'cursed','broken','dreaded','hated','loved','common','rare','uncommon','epic','legendary','mythical','exotic','heroic','real','fake','faulty','functioning','threatening']
+                 'cursed','broken','dreaded','hated','loved','common','rare','uncommon','epic','legendary','mythical','exotic','heroic','real','fake','faulty','functioning','threatening','sleepy','tired','caffeinated']
 
     #Nouns:
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
@@ -24,11 +24,12 @@ def base_vars():
 
     #Verbs
     past_verb = ['hated','loved','ate','murdered','owned','ignored','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled',
-                 'broke','saw']
-    verb = ['hate','love','see','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify','enslave','mind control','threaten','break']
-    verbS = ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies','enslaves','mind controls','threatens','breaks']
-    verbing = ['killing','murdering','hanging','removing','executing','hunting','torturing','eating','ignoring','threatening','breaking','seeing']
-    gverb = ['explode','die','dissapear','disintegrate','leave','apologize','cry','weep','rejoice']
+                 'broke','saw','roused','awoken']
+    verb = ['hate','love','see','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify','enslave','mind control','threaten','break','awake','rouse']
+    verbS = ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies','enslaves','mind controls','threatens','breaks',
+             'awakens','rouses']
+    verbing = ['killing','murdering','hanging','removing','executing','hunting','torturing','eating','ignoring','threatening','breaking','seeing','waking','rousing']
+    gverb = ['explode','die','dissapear','disintegrate','leave','apologize','cry','weep','rejoice','awaken','sleep']
 
     #Proper Nouns:
     people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter','Elon Musk',
@@ -36,7 +37,7 @@ def base_vars():
                 'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
                 'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ','Doomguy','Master Chief','Moonlight','Starlight','Bob','El Goblino','Beetlejuice','Mario',
                 'Luigi','Yoshi','Sonic','DougDoug','Douglas Scott Wreden','CaseOh','IShowSpeed','Dr. Doofenshmirtz','Sans','Papyrus','Flowery','Agent P.','Perry the Platypus','Candice','Phineas','Ferb','Abraham Lincoln','Creak','KreekCraft','Figure','Seek',
-                'George Washington','Rob','Sbeve','Terry','Larry','Killstreak','Guide','Mortis','Dave','Moai','Gordon Ramsey']
+                'George Washington','Rob','Sbeve','Terry','Larry','Guide','Mortis','Dave','Gordon Ramsey','Santa Claus','Mrs. Claus','John Halloween','John Pork']
     locations = ['China','the United States of America','Texas','Germany','France','the Netherlands','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the depths','the shadow realm','Area 51','the End',
                 'the Overworld','the Sift','the Roblox Headquarters','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto']
 
@@ -44,6 +45,13 @@ def base_vars():
     anss = ['yes','no','maybe','probably','probably not']
     conjunction = ['for','and','yet','so','because','or','or maybe']
     punct = ['.','.','.','.','.','.','.','.','.','.','.',    '...','!','?']
+
+
+
+    #Structure:
+    are_am_is = ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX']
+    stem = ['self','selfm','people','userS','userA','plur noun are','the noun is','answer']
+    end = ['punct','punct','punct','com']
 
     return {
         'self': ['I'],
@@ -81,39 +89,39 @@ def base_vars():
         'com': [','],
         'conjunction': conjunction
     }, {
-        'start': ['self','selfm','people','userS','userA','plur noun are','the noun is','answer'],
+        'start': stem,
         'self': ['verb','am','past verb'],
         'people': ['verbS','is','past verb'],
-        'peopleX': ['punct','punct','punct','com'],
-        'am': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
-        'selfm': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
-        'is': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
+        'peopleX': end,
+        'am': are_am_is,
+        'selfm': are_am_is,
+        'is': are_am_is,
         'verb': ['plur noun','adjective','the noun'],
         'verbing': ['plur noun','a','adjective','the noun'],
         'verbS': ['plur noun','user','selfX','the noun'],
-        'gverb': ['punct','punct','punct','com'],
+        'gverb': end,
         'past verb': ['plur noun','user','selfX','the noun','a'],
-        'user': ['punct','punct','punct','com'],
-        'selfX': ['punct','punct','punct','com'],
+        'user': end,
+        'selfX': end,
         'userS': ['are'],
-        'are': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
-        'userA': ['AMadjective','a','the noun','from','going to','peopleX','verbing','user','selfX'],
-        'noun': ['punct','punct','punct','com'],
-        'the noun': ['punct','punct','punct','com'],
+        'are': are_am_is,
+        'userA': are_am_is,
+        'noun': end,
+        'the noun': end,
         'the noun is': ['is','past verb'],
         'plur noun are': ['are','past verb'],
-        'plur noun': ['punct','punct','punct','com'],
+        'plur noun': end,
         'adjective': ['plur noun'],
         'from': ['locations'],
         'going to': ['locations','gverb','verb','be'],
-        'locations': ['punct','punct','punct','com'],
-        'AMadjective': ['punct','punct','punct','com'],
+        'locations': end,
+        'AMadjective': end,
         'be': ['AMadjective','a','past verb e'],
         'com': ['conjunction'],
-        'conjunction': ['self','selfm','people','userS','userA','plur noun are','the noun is'],
+        'conjunction': stem,
         'adjectiveQ': ['noun'],
-        'punct': ['self','selfm','people','userS','userA','plur noun are','the noun is','answer'],
+        'punct': stem,
         'a': ['adjectiveQ','noun'],
-        'answer': ['punct','punct','punct','com'],
-        'past verb e': ['punct','punct','punct','com']
+        'answer': end,
+        'past verb e': end
     }

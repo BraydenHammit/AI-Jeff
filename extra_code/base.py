@@ -52,8 +52,8 @@ def base_vars():
 
 
     #Structure:
-    are_am_is = ['AMadjective','a','the noun','locations','from','going to','peopleX','verbing','user','selfX','ownerships','ownershipE']
-    stem = ['self','selfm','people','userS','userA','plur noun are','the noun is','location is','answer','ownership']
+    are_am_is = ['AMadjective','a','the noun','locations','from','going to','peopleX','verbing','pronounX','ownerships','ownershipE']
+    stem = ['pronoun','pronounI','pronounA','pronoun is','people','plur noun are','the noun is','location is','answer','ownership']
     stem2 = stem.copy()
     stem2.remove('answer')
     end = ['punct','punct','punct','com']
@@ -61,10 +61,12 @@ def base_vars():
     return {
         'ownership': own,
         'ownershipE': own,
-        'ownerships': ['his','hers','mine','yours','theirs'],
-        'self': ['I'],
-        "selfm": ["I'm","I'm not"],
-        'selfX': ['me'],
+        'ownerships': ['his','hers','mine','yours','theirs','its','ours'],
+        'pronoun': ['I'],
+        'pronounI': ['he','she','it'],
+        'pronounA': ['you','they','we'],
+        'pronounX': ['me','him','her','you','them','us'],
+        "pronoun is": ["I'm","I'm not","you're","you're not","he's","he's not","she's","she's not","they're","they're not","we're","we're not","it's","it's not"],
         'people': people,
         'peopleX': people,
         'verb': verb,
@@ -82,11 +84,8 @@ def base_vars():
         'is': ['is','is not',"isn't"],
         'was': ['was','was not',"wasn't"],
         'be': ['be'],
-        'userS': ['you'],
         'from': ['from'],
         'a': ['a'],
-        'user': ['you'],
-        'userA': ["you're"],
         'answer': anss,
         'noun': nouns,
         'nounO': nouns,
@@ -103,24 +102,23 @@ def base_vars():
         'conjunction': conjunction
     }, {
         'start': stem,
-        'self': ['verb','am','was','past verb'],
+        'pronoun': ['verb','am','was','past verb'],
+        'pronounI': ['verb','is','was','past verb'],
+        'pronounA': ['verb','are','was','past verb'],
         'people': ['verbS','is','was','past verb'],
         'peopleX': end,
         'am': are_am_is,
-        'selfm': are_am_is,
         'is': are_am_is,
+        'pronoun is': are_am_is,
         'verb': ['plur noun','adjective','the noun','locations'],
         'verbing': ['plur noun','a','adjective','the noun','locations'],
-        'verbS': ['plur noun','user','selfX','the noun','locations'],
+        'verbS': ['plur noun','pronounX','the noun','locations'],
         'gverb': end,
-        'past verb': ['plur noun','user','selfX','the noun','locations','a'],
-        'user': end,
-        'selfX': end,
-        'userS': ['are'],
+        'past verb': ['plur noun','pronounX','the noun','locations','a'],
+        'pronounX': end,
         'are': are_am_is,
         'was': are_am_is,
         'were': are_am_is,
-        'userA': are_am_is,
         'noun': end,
         'the noun': end,
         'the noun is': ['is','was','verbS','past verb'],

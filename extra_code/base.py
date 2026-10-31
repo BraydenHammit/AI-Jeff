@@ -36,14 +36,15 @@ def base_vars():
 
     #Proper Nouns:
     people = ['Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','Jeff','the one and only Jeff','Jeff the Killer',     'Obama','Heisenberg','Rick','Morty','Harry Potter','Elon Musk',
-                'some random guy','McDonalds','Sheldon1436','satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Tom Holland','Spiderman',
+                'some random guy','McDonalds','Sheldon1436','Satan','God','GreenTurtleFrog','Cpj2020','Verity','Jib','Notch','Mojang','Voldemort','He-Who-Must-Not-Be-Named','You-Know-Who','Kermit the Frog','Tony Stark','Microsoft','Tom Holland','Spiderman',
                 'Technoblade','Dream','CamMan18','Preston','KTaylor Gaming','Odin','Zeus','Poseidon','Thor','Magnus Chase','Percy Jackson','Desk Chair','Steve Jobs','Steve','Alex','Gandalf','Frodo','Dumbledore','Ron','Hagrid','Hermione','Iron Man','Zendaya',
                 'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ','Doomguy','Master Chief','Moonlight','Starlight','Bob','El Goblino','Beetlejuice','Mario',
                 'Luigi','Yoshi','Sonic','DougDoug','Douglas Scott Wreden','CaseOh','IShowSpeed','Dr. Doofenshmirtz','Sans','Papyrus','Flowery','Agent P.','Perry the Platypus','Candice','Phineas','Ferb','Abraham Lincoln','Creak','KreekCraft','Figure','Seek',
                 'George Washington','Rob','Sbeve','Terry','Larry','Guide','Mortis','Dave','Gordon Ramsey','Santa Claus','Mrs. Claus','John Halloween','John Pork','Honcho','Ganon','Ganondorf','Zelda','Link','Sir Abraham Creakstopher II']
     locations = ['China','the United States of America','Texas','Germany','France','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the shadow realm','Area 51','the End','the Hotel','the Matrix','the Stairwell',
-                'the Overworld','the Sift','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto','the Backdoor']
-    locationsss = ['the Netherlands','the depths','the Mines','the Outdoors','the indoors','the Archives','the Rooms','the Roblox Headquarters']
+                'the Overworld','the Sift','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto','the Backdoor','outside','inside']
+    locationsss = ['the Netherlands','the depths','the Mines','the Outdoors','the indoors','the Archives','the Rooms','the Roblox Headquarters','the Catacombs','the Great Plains','the Bahamas','Lazarus Labs','the Whispering Woods','the sewers','the trenches',
+                   'the streets']
 
     #Other:
     anss = ['yes','no','maybe','probably','probably not']
@@ -83,6 +84,7 @@ def base_vars():
         'locationsS are': locationsss,
         'location is': locations,
         'going to': ['going to'],
+        'go to': ['go to'],
         'am': ['am','am not'],
         'are': ['are','are not',"aren't"],
         'were': ['were','were not',"weren't"],
@@ -137,8 +139,9 @@ def base_vars():
         'plur noun': end,
         'adjective': ['plur noun'],
         'from': ['locations','locationsS'],
-        'will': ['verb','gverb'],
-        'going to': ['locations','locationsS','gverb','verb','be'],
+        'go to': ['locations','locationsS'],
+        'will': ['verb','gverb','go to'],
+        'going to': ['locations','locationsS','gverb','verb','be','go to'],
         'locations': end,
         'locationsS': end,
         'AMadjective': end,

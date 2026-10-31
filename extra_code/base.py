@@ -65,7 +65,7 @@ def base_vars():
         'pronoun': ['I'],
         'pronounI': ['he','she','it'],
         'pronounA': ['you','they','we'],
-        'pronounX': ['me','him','her','you','them','us'],
+        'pronounX': ['me','him','her','you','them','us','it'],
         "pronoun is": ["I'm","I'm not","you're","you're not","he's","he's not","she's","she's not","they're","they're not","we're","we're not","it's","it's not"],
         'people': people,
         'peopleX': people,

@@ -6,7 +6,7 @@ def base_vars():
                   'confused','slow','fast','sorry','gold','blue','yellow','pink','grey','brown','rainbow','clear','supportive','helpful','honest','dishonest','trustworthy','untrustworthy','loyal','universal','spiteful','helpless','bald','sour','bitter',
                   'humane','inhumane','toxic','poisonous','strange','dark','light','black','white','monotone','bouncy','empty','mixed','complete','crispy','tender','vegetative','underage','immature','mature','spicy','vigorous','magnetic','ferrous','non-ferrous',
                   'mettalic','acidic','colorlous','odorlous','popular','chunky','lame','disabled','enabled','obtuse','obese','overweight','underweight','acute','right','wrong','demented','clothed','naked','scared','afraid','daunting','burnt','cooked',
-                 'cursed','broken','dreaded','hated','loved','common','rare','uncommon','epic','legendary','mythical','exotic','heroic','real','fake','faulty','functioning','threatening','sleepy','tired','caffeinated','precious','brutal','deadly','rabid',
+                 'cursed','common','rare','uncommon','epic','legendary','mythical','exotic','heroic','real','fake','faulty','functioning','threatening','sleepy','tired','caffeinated','precious','brutal','deadly','rabid',
                  'dangerous','perfect','imperfect','young','old']
 
     #Nouns:
@@ -14,7 +14,7 @@ def base_vars():
              'penny','t-shirt','dinosaur','turtle','killer','human','fish','feline','Aetheist','rat','pumpkin','quarter','nickel','egg','tariff','chicken','bee','salad','desk','mouse','chair','moose','cactus','plant','tree','banana','chair','bum',
              'man','woman','boy','girl','child','fungus','infection','virus','bacteria','amoeba','mushroom','ghost','skeleton','mummy','zombie','candy','pickle','apple','minion','dish','penguin','canine','pencil','cabinet','alien','cow','pig','gallon of milk',
              'stick of butter','cup of yogurt','cream','coconut','chocolate','chip','crisp','fry','okra','vegetable','watermelon','blueberry','blackberry','raspberry','orange','flamingo','job','clanker','crucifix','tesseract','prophet','prophecy',
-             'Korok','mother','father','son','daughter','niece','nephew','brother','sister','aunt','uncle','grandmother','grandfather','burger','hamburger','hat']
+             'Korok','mother','father','son','daughter','niece','nephew','brother','sister','aunt','uncle','grandmother','grandfather','burger','hamburger','hat','gentleman','Roomba']
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','the Earth','the One Ring','the Chosen One','the wall','the prophecy','the Dictionary',
                  'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI','the FDA','the Secret Service','everything','the moon','the ceiling',
                 'the floor','the population','the Executive Branch','the Legislative Branch','the Judicial Branch','the Cabinet','the Senate','the Supreme Court','the Dark Lord','the Demon King','the Doom Slayer','the Crucible','the Tesseract',
@@ -23,11 +23,16 @@ def base_vars():
                   'bees','mice','geese','desks','chairs','bananas','plants','trees','cacti','mooses','bums','men','women','boys','girls','children','fungi','infections','viruses','bacteria','amoebae','mushrooms','ghosts','skeletons','mummies','zombies',
                   'candies','pickles','apples','human rights','minions','dishes','penguins','canines','pencils','cabinets','aliens','cows','pigs','coconuts','chocolates','chips','crisps','fries','vegetables','watermelons','blueberries','blackberries',
                   'raspberries','oranges','flamingos','jobs','clankers','crucifixes','tesseracts','prophets','prophecies','Koroks','mothers','fathers','sons','daughters','nieces','nephews','brothers','sisters','aunts','uncles','grandmothers','grandfathers',
-                  'burgers','cheesburgers','hamburgers','hat']
+                  'burgers','cheesburgers','hamburgers','hats','gentlemen','Roombas']
 
     #Verbs
     past_verb = ['hated','loved','ate','murdered','owned','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled','prophesized',
-                 'broke','roused','awoken','fulfilled']
+                 'broke','roused','awoken','fulfilled','broken','dreaded','distinguished']
+    pastverbadj = past_verb.copy()
+    pastverbadj.remove('ate')
+    pastverbadj.append('eaten')
+    for value in pastverbadj:
+        adjectives.append(value)
     verb = ['hate','love','see','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify','enslave','mind control','threaten','break','awake','rouse','prophesize']
     verbS = ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies','enslaves','mind controls','threatens','breaks',
              'awakens','rouses','prophesizes']
@@ -56,7 +61,7 @@ def base_vars():
 
     #Structure:
     are_am_is = ['AMadjective','a','the noun','locations','locationsS','from','going to','peopleX','verbing','pronounX','ownerships','ownershipE']
-    stem = ['pronoun','pronounI','pronounA','pronoun is','people','plur noun are','the noun is','location is','locationsS are','answer','ownership']
+    stem = ['pronoun','pronounI','pronounA','pronoun is','people','adjective PNAs','plur noun are','the noun is','a _','location is','locationsS are','answer','ownership']
     stem2 = stem.copy()
     stem2.remove('answer')
     end = ['punct','punct','punct','com']
@@ -76,7 +81,6 @@ def base_vars():
         'verb': verb,
         'verbS': verbS,
         'past verb': past_verb,
-        'past verb e': past_verb,
         'gverb': gverb,
         'verbing': verbing,
         'locations': locations,
@@ -94,8 +98,10 @@ def base_vars():
         'from': ['from'],
         'will': ['will','will not',"won't"],
         'a': ['a'],
+        'a _': ['a'],
         'answer': anss,
         'noun': nouns,
+        'noun is': nouns,
         'nounO': nouns,
         'the noun': the_nouns,
         'the noun is': the_nouns,
@@ -107,6 +113,8 @@ def base_vars():
         'adjectiveOS': adjectives,
         'adjectiveQ': adjectives,
         'AMadjective': adjectives,
+        'adjective PNA': adjectives,
+        'adjective PNAs': adjectives,
         'punct': punct,
         'com': [','],
         'conjunction': conjunction
@@ -120,6 +128,7 @@ def base_vars():
         'am': are_am_is,
         'is': are_am_is,
         'pronoun is': are_am_is,
+        'noun is': ['is','was','verbS','past verb','will'],
         'pronounW': ['verb','gverb'],
         'verb': ['plur noun','adjective','the noun','locations','locationsS','pronounX'],
         'verbing': ['plur noun','a','adjective','the noun','locations','locationsS','pronounX'],
@@ -145,14 +154,16 @@ def base_vars():
         'locations': end,
         'locationsS': end,
         'AMadjective': end,
-        'be': ['AMadjective','a','past verb e','ownerships'],
+        'adjective PNA': ['noun is'],
+        'adjective PNAs': ['plur noun are'],
+        'be': ['AMadjective','a','ownerships'],
         'com': ['conjunction'],
         'conjunction': stem2,
         'adjectiveQ': ['noun'],
         'punct': stem,
         'a': ['adjectiveQ','noun'],
+        'a _': ['adjective PNA','noun is'],
         'answer': end,
-        'past verb e': end,
         'ownerships': end,
         'ownership': ['adjectiveO','nounO','plur nounO','adjectiveOS'],
         'adjectiveO': ['nounO'],

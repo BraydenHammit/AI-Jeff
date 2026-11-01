@@ -32,7 +32,7 @@ def run(inquiry,words,nxt):
             word = choices[(alphabet(char)-1) % len(choices)]
         elif inquiry[(loop + iteration) % len(inquiry)].capitalize() == inquiry[(loop + iteration) % len(inquiry)]:
             word = choices[(alphabet(char)+1) % len(choices)]
-        if xqc == 'a' and ((word[0].lower() in ('i','o','u','a','e')) or (word == 'honest')):
+        if (xqc == 'a' or xqc == 'a _') and ((word[0].lower() in ('i','o','u','a','e')) or (word == 'honest')):
             answer += 'n'
         if tt not in ('punct','com'):
             answer += ' '
@@ -63,7 +63,7 @@ def run(inquiry,words,nxt):
             word = choices[(alphabet(char)-1) % len(choices)]
         elif inquiry[(loop + iteration) % len(inquiry)].capitalize() == inquiry[(loop + iteration) % len(inquiry)]:
             word = choices[(alphabet(char)+1) % len(choices)]
-        if xqc == 'a' and ((word[0].lower() in ('i','o','u','a','e')) or (word == 'honest')):
+        if (xqc == 'a' or xqc == 'a _') and ((word[0].lower() in ('i','o','u','a','e')) or (word == 'honest')):
             answer += 'n'
         if tt not in ('punct','com'):
             answer += ' '

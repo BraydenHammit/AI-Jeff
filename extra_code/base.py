@@ -8,6 +8,7 @@ def base_vars():
                   'mettalic','acidic','colorlous','odorlous','popular','chunky','lame','disabled','enabled','obtuse','obese','overweight','underweight','acute','right','wrong','demented','clothed','naked','scared','afraid','daunting','burnt','cooked',
                  'cursed','common','rare','uncommon','epic','legendary','mythical','exotic','heroic','real','fake','faulty','functioning','threatening','sleepy','tired','caffeinated','precious','brutal','deadly','rabid','narcissistic',
                  'dangerous','perfect','imperfect','young','old','broken']
+    amount = ['two','eight','seven','six','nine','zero','three','four','five','ten','thirteen','seventeen','sixty seven','forty one','twenty one','nineteen','some','a couple','a few']
 
     #Nouns:
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
@@ -68,8 +69,8 @@ def base_vars():
 
 
     #Structure:
-    are_am_is = ['verbing','verbing','verbing',   'AMadjective','AMadjective','AMadjective',   'a','the noun','locations','locationsS','from','going to','peopleX','pronounX','PNownerships','PNownershipE','ownerships','ownershipE']
-    stem = ['pronoun','pronounI','pronounA','pronoun is','people','adjective PNAs','plur noun are','the noun is','a _','location is','locationsS are','answer','ownership','PNownership']
+    are_am_is = ['verbing','verbing','verbing',   'AMadjective','AMadjective','AMadjective',   'a','amount','the noun','locations','locationsS','from','going to','peopleX','pronounX','PNownerships','PNownershipE','ownerships','ownershipE']
+    stem = ['pronoun','pronounI','pronounA','pronoun is','people','adjective PNAs','plur noun are','the noun is','a _','amount START','location is','locationsS are','answer','ownership','PNownership']
     stem2 = stem.copy()
     stem2.remove('answer')
     end = ['punct','punct','punct','com']
@@ -79,7 +80,7 @@ def base_vars():
         'PNownership': propnoun_own,
         'ownershipE': own,
         'PNownershipE': propnoun_own,
-        'ownerships': ['mine','mine','mine','mine',  'yours','yours','yours','yours',        'his','hers','theirs','its','ours'],
+        'ownerships': ['mine','mine','mine','mine',  'yours','yours','yours','yours',        'his','hers','theirs','ours'],
         'PNownerships': propnoun_own,
         'pronoun': ['I'],
         'pronounI': ['he','she','it'],
@@ -98,6 +99,9 @@ def base_vars():
         'locationsS': locationsss,
         'locationsS are': locationsss,
         'location is': locations,
+        'amount': amount,
+        'amount START': amount,
+        'amount owned': amount,
         'going to': ['going to'],
         'go to': ['go to'],
         'am': ['am','am not'],
@@ -174,11 +178,15 @@ def base_vars():
         'punct': stem,
         'a': ['adjectiveQ','noun'],
         'a _': ['adjective PNA','noun is'],
+        'a': ['adjectiveQ','noun'],
+        'amount START': ['adjective PNAs','plur noun are'],
+        'amount': ['adjective','plur noun'],
         'answer': end,
         'ownerships': end,
-        'ownership': ['adjectiveO','nounO','plur nounO','adjectiveOS'],
+        'ownership': ['adjectiveO','nounO','plur nounO','adjectiveOS','amount owned'],
         'PNownerships': end,
-        'PNownership': ['adjectiveO','nounO','plur nounO','adjectiveOS'],
+        'PNownership': ['adjectiveO','nounO','plur nounO','adjectiveOS','amount owned'],
+        'amount owned': ['plur nounO','adjectiveOS'],
         'adjectiveO': ['nounO'],
         'adjectiveOS': ['plur nounO'],
         'nounO': ['is','was','verbS','past verb'],

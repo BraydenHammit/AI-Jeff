@@ -68,7 +68,7 @@ def feedback(f=False):
     upvote.pack_forget()
     midvote.pack_forget()
     downvote.pack_forget()
-    vote.configure(text=f'                             Vote: {'Bad' if f == False else 'Good' if f == True else 'Neutral'}                             ',fg=('red' if f == False else 'lime' if f == True else "#ddff00"))
+    vote.configure(text=f"                             Vote: {'Bad' if f == False else 'Good' if f == True else 'Neutral'}                             ",fg=('red' if f == False else 'lime' if f == True else "#ddff00"))
     vote.pack()
 
 def nextlet(c):

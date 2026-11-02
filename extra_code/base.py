@@ -68,7 +68,7 @@ def base_vars():
 
 
     #Structure:
-    are_am_is = ['AMadjective','a','the noun','locations','locationsS','from','going to','peopleX','verbing','pronounX','PNownerships','PNownershipE','ownerships','ownershipE']
+    are_am_is = ['verbing','verbing','verbing',   'AMadjective','AMadjective','AMadjective',   'a','the noun','locations','locationsS','from','going to','peopleX','pronounX','PNownerships','PNownershipE','ownerships','ownershipE']
     stem = ['pronoun','pronounI','pronounA','pronoun is','people','adjective PNAs','plur noun are','the noun is','a _','location is','locationsS are','answer','ownership','PNownership']
     stem2 = stem.copy()
     stem2.remove('answer')
@@ -79,12 +79,12 @@ def base_vars():
         'PNownership': propnoun_own,
         'ownershipE': own,
         'PNownershipE': propnoun_own,
-        'ownerships': ['his','hers','mine','yours','theirs','its','ours'],
+        'ownerships': ['mine','mine','mine','mine',  'yours','yours','yours','yours',        'his','hers','theirs','its','ours'],
         'PNownerships': propnoun_own,
         'pronoun': ['I'],
         'pronounI': ['he','she','it'],
         'pronounA': ['you','they','we'],
-        'pronounX': ['me','him','her','you','them','us','it'],
+        'pronounX': ['me','me','me','you','you','you','us','us',        'him','her','them','it'],
         "pronoun is": ["I'm","I'm not","you're","you're not","he's","he's not","she's","she's not","they're","they're not","we're","we're not","it's","it's not"],
         "pronounW": ["I'll","I'll not","you'll","you'll not","he'll","he'll not","she'll","she'll not","they'll","they'll not","we'll","we'll not","it'll","it'll not"],
         'people': people,

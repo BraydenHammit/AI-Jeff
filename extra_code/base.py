@@ -19,7 +19,7 @@ def base_vars():
     the_nouns = ['the cat','the government','the cheeseburger','the law','the future','the present','the past','the president','the moon landing','the King','the Lord','the devil','the Earth','the One Ring','the Chosen One','the wall','the prophecy','the Dictionary',
                  'the Queen','the judge','the jury','the Bible','the New Testament','the Old Testament','the Constitution','the Bill of Rights','the Declaration of Independence','the CIA','the FBI','the FDA','the Secret Service','everything','the moon','the ceiling',
                 'the floor','the population','the Executive Branch','the Legislative Branch','the Judicial Branch','the Cabinet','the Senate','the Supreme Court','the Dark Lord','the Demon King','the Doom Slayer','the Crucible','the Tesseract','the Pope',
-                'the air','the atmosphere','everyone','the heir','the universe','the multiverse','the asteroid belt','the Roaring Knight','the Hollow Knight','the Eternal Bob','the laws of physics','the fourth wall','the Empire State Building'] #the people
+                'the air','the atmosphere','everyone','the heir','the universe','the multiverse','the asteroid belt','the Roaring Knight','the Hollow Knight','the Eternal Bob','the laws of physics','the fourth wall','the Empire State Building','the Grim Reaper'] #the people
     plur_nouns = ['cats','rats','snakes','cheeses','foxes','fish','tables','people','citizens','ideas','laws','taxes','potatoes','robots','things','gadgets','Aetheists','humans','families','pumpkins','tariffs','eggs','dogs','computers','chickens','dinosaurs',
                   'bees','mice','geese','desks','chairs','bananas','plants','trees','cacti','mooses','bums','men','women','boys','girls','children','fungi','infections','viruses','bacteria','amoebae','mushrooms','ghosts','skeletons','mummies','zombies',
                   'candies','pickles','apples','human rights','minions','dishes','penguins','canines','pencils','cabinets','aliens','cows','pigs','coconuts','chocolates','chips','crisps','fries','vegetables','watermelons','blueberries','blackberries',
@@ -29,10 +29,10 @@ def base_vars():
     #Verbs
     past_verb = ['hated','loved','ate','murdered','owned','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled','prophesized',
                  'broke','roused','awoken','fulfilled','dreaded','distinguished']
-    pastverbadj = past_verb.copy()
-    pastverbadj.remove('ate')
-    pastverbadj.append('eaten')
-    for value in pastverbadj:
+    pva = past_verb.copy()
+    pva.remove('ate')
+    pva.append('eaten')
+    for value in pva:
         adjectives.append(value)
     verb = ['hate','love','see','eat','murder','own','ignore','sell','torture','kill','hang','hunt','seek out','rename','ban','raid','burn','melt','fix','finish','curse','crucify','enslave','mind control','threaten','break','awake','rouse','prophesize']
     verbS = ['hates','loves','eats','murders','owns','ignores','admires','cooks','sells','tortures','kills','hangs','hunts','seeks','renames','bans','raids','burns','melts','fixes','finishes','curses','crucifies','enslaves','mind controls','threatens','breaks',
@@ -47,7 +47,7 @@ def base_vars():
                 'the Hulk','Bruce Banner','some dude','Dr. Seuss','Dr. Strange','Darth Vader','Luke Skywalker','Obi-Wan Kenobi','Gru','that guy','Sauron','Jesus Christ','Doomguy','Master Chief','Moonlight','Starlight','Bob','El Goblino','Beetlejuice','Mario',
                 'Luigi','Yoshi','Sonic','DougDoug','Douglas Scott Wreden','CaseOh','IShowSpeed','Dr. Doofenshmirtz','Sans','Papyrus','Flowery','Agent P.','Perry the Platypus','Candice','Phineas','Ferb','Abraham Lincoln','Creak','KreekCraft','Figure','Seek',
                 'George Washington','Rob','Sbeve','Terry','Larry','Guide','Mortis','Dave','Gordon Ramsey','Santa Claus','Mrs. Claus','John Halloween','John Pork','Honcho','Ganon','Ganondorf','Zelda','Link','Sir Abraham Creakstopher II','David Baszucki',
-                'Mark Zuckerberg']
+                'Mark Zuckerberg','Grimace','Ronald McDonald']
     locations = ['China','the United States of America','Texas','Germany','France','the Nether','Hell','Heaven','Helheim','Limbo','the United Kingdom','Scotland','Australia','the shadow realm','Area 51','the End','the Hotel','the Matrix','the Stairwell',
                 'the Overworld','the Sift','Mother Russia','Georgia','South Park','Czechia','the Backrooms','Jupiter','Mercury','the Milky Way','Venus','Earth','Mars','Saturn','Uranus','Neptune','Pluto','the Backdoor']
     locationsss = ['the Netherlands','the depths','the Mines','the Outdoors','the indoors','the Archives','the Rooms','the Roblox Headquarters','the Catacombs','the Great Plains','the Bahamas','Lazarus Labs','the Whispering Woods','the sewers','the trenches',

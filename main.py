@@ -1,34 +1,6 @@
 from extra_code.run import run
 from extra_code.base import base_vars
 import tkinter as tk
-import platform as plt
-try:
-    if plt.system() == 'Darwin':
-        import pyttsx3
-        import threading as thrd
-        tts = True
-    else:
-        tts = False
-except: tts = False
-
-if tts:
-    temp_engine = pyttsx3.init()
-    voices = temp_engine.getProperty('voices')
-    print(voices)
-    british_voice_id = None
-    for voice in voices:
-        if "GB" in voice.id or "United Kingdom" in voice.name or "en_GB" in str(voice.languages):
-            british_voice_id = voice.id
-            break
-
-def play(word):
-    if tts:
-        engine = pyttsx3.init()
-        engine.setProperty('volume', 1.0)
-        engine.setProperty('rate', 300)
-        engine.setProperty('voice', british_voice_id)
-        engine.say(word)
-        engine.runAndWait()
 
 root = tk.Tk()
 root.title('Jeff the AI')
@@ -74,8 +46,6 @@ def r(_=None):
     ids.pop(0)
     ans.configure(text='')
     teext = ''
-    if tts:
-        thrd.Thread(target=play, args=(answer,), daemon=True).start()
     root.after(5,lambda:nextlet(counter))
 
 def feedback(f=False):
@@ -112,21 +82,12 @@ def nextlet(c):
             teext += answer[len(teext)]
         except IndexError: return
         ans.configure(text=teext)
-        if tts:
-            if (len(teext) % 6) == 0:
-                img.configure(image=images['def'])
-            elif (len(teext) % 3) == 0:
-                img.configure(image=images['talk'])
-        else:
-            if (len(teext) % 20) == 0:
-                img.configure(image=images['def'])
-            elif (len(teext) % 10) == 0:
-                img.configure(image=images['talk'])
+        if (len(teext) % 20) == 0:
+            img.configure(image=images['def'])
+        elif (len(teext) % 10) == 0:
+            img.configure(image=images['talk'])
         if not (len(teext) == len(answer)):
-            if tts:
-                root.after(33,lambda:nextlet(c))
-            else:
-                root.after(5,lambda:nextlet(c))
+            root.after(5,lambda:nextlet(c))
         else: img.configure(image=images['def'])
         root.update_idletasks()
 

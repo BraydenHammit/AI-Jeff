@@ -1,7 +1,7 @@
 from math import sqrt, floor
 from extra_code.alph import alphabet
 
-def run(inquiry,words,nxt):
+def run(inquiry,words,nxt,onesent=False):
     if inquiry == '': inquiry = ' ' 
 
     def iterate(num):
@@ -19,31 +19,32 @@ def run(inquiry,words,nxt):
     wrds = []
     answer = ''
     loop = 2
-    for each in range(floor(sqrt(len(inquiry))*13)):
-        xqc = word_id[loop]
-        t = nxt[word_id[loop]]
-        iteration = loop // 2
-        tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 7) % len(t)]
-        char = inquiry[(loop - 2) % len(inquiry)]
-        choices = words[tt]
-        if inquiry[(loop + iteration) % len(inquiry)].lower() == inquiry[(loop + iteration) % len(inquiry)].capitalize():
-            word = choices[(alphabet(char)) % len(choices)]
-        elif inquiry[(loop + iteration) % len(inquiry)].lower() == inquiry[(loop + iteration) % len(inquiry)]:
-            word = choices[(alphabet(char)-1) % len(choices)]
-        elif inquiry[(loop + iteration) % len(inquiry)].capitalize() == inquiry[(loop + iteration) % len(inquiry)]:
-            word = choices[(alphabet(char)+1) % len(choices)]
-        if (xqc == 'a' or xqc == 'a _') and ((word[0].lower() in ('i','o','u','a','e')) or (word == 'honest')):
-            answer += 'n'
-        if tt not in ('punct','com'):
-            answer += ' '
-        if xqc in ('start','punct'):
-            answer += word[0].upper() + word[1:] 
-        else:
-            answer += word
-        wrds.append(word)
-        word_id.append(tt)
-        loop += 1
-        iterate(loop-1)
+    if not (len(inquiry) == 1 or onesent):
+        for each in range(floor(sqrt(len(inquiry))*13)):
+            xqc = word_id[loop]
+            t = nxt[word_id[loop]]
+            iteration = loop // 2
+            tt = t[(loop * 13 + iteration * 17 + alphabet(inquiry[(loop + iteration) % len(inquiry)]) * 7) % len(t)]
+            char = inquiry[(loop - 2) % len(inquiry)]
+            choices = words[tt]
+            if inquiry[(loop + iteration) % len(inquiry)].lower() == inquiry[(loop + iteration) % len(inquiry)].capitalize():
+                word = choices[(alphabet(char)) % len(choices)]
+            elif inquiry[(loop + iteration) % len(inquiry)].lower() == inquiry[(loop + iteration) % len(inquiry)]:
+                word = choices[(alphabet(char)-1) % len(choices)]
+            elif inquiry[(loop + iteration) % len(inquiry)].capitalize() == inquiry[(loop + iteration) % len(inquiry)]:
+                word = choices[(alphabet(char)+1) % len(choices)]
+            if (xqc == 'a' or xqc == 'a _') and ((word[0].lower() in ('i','o','u','a','e')) or (word == 'honest')):
+                answer += 'n'
+            if tt not in ('punct','com'):
+                answer += ' '
+            if xqc in ('start','punct'):
+                answer += word[0].upper() + word[1:] 
+            else:
+                answer += word
+            wrds.append(word)
+            word_id.append(tt)
+            loop += 1
+            iterate(loop-1)
 
     extloop = 0
     if word_id[loop] == 'punct': finished = True

@@ -4,7 +4,7 @@ import tkinter as tk
 
 root = tk.Tk()
 root.title('Jeff the AI')
-root.geometry('700x420')
+root.geometry('700x440')
 root.config(bg='grey40')
 blink_state = 'o'
 repitition = 1
@@ -36,7 +36,11 @@ def r(_=None):
         try:vote.pack_forget()
         except:None
     counter += 1
-    answer, ids, wrds = run(entry.get(),words,structure)
+    _ = onesent.get()
+    if _ == True:
+        answer, ids, wrds = run(entry.get(),words,structure,onesent=True)
+    else:
+        answer, ids, wrds = run(entry.get(),words,structure)
     ids.pop(0)
     ids.pop(0)
     ids.pop(0)
@@ -99,6 +103,9 @@ def blink():
         img.configure(image=images['def'])
         root.after(2800 + ((repitition * 152) % 4000),blink)
 
+onesent = tk.BooleanVar()
+check = tk.Checkbutton(root,text="Single Sentence Mode",variable=onesent,highlightbackground='grey40',bg='grey40')
+check.place(x=10,y=410)
 img = tk.Label(root,image=images['def'],highlightbackground='grey40',bg='grey40')
 img.place(x=10,y=10)
 overfrm = tk.Frame(root,highlightbackground='grey40',bg='grey40',width=360)

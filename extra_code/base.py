@@ -27,7 +27,7 @@ def base_vars():
                   'burgers','cheesburgers','hamburgers','hats','gentlemen','Roombas','refrigerators','biographies','autobiographies','books','walls']
 
     #Verbs
-    past_verb = ['hated','loved','ate','murdered','owned','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled','prophesized',
+    past_verb = ['hated','loved','ate','murdered','owned','sold','tortured','built','ignored','killed','hung','hunted','sought','renamed','banned','raided','burned','melted','fixed','finished','crucified','cursed','enslaved','mind controlled','prophesied',
                  'broke','roused','awoken','fulfilled','dreaded','distinguished']
     pva = past_verb.copy()
     pva.remove('ate')

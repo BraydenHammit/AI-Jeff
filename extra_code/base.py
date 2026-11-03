@@ -61,10 +61,11 @@ def base_vars():
                 propnoun_own.append(v+"'s")
 
     #Other:
-    anss = ['yes','no','maybe','probably','probably not']
+    anss = ['yes','no','maybe','probably','probably not','possibly','possibly not']
     conjunction = ['for','and','yet','so','because','or']
     punct = ['.','.','.','.','.','.','.','.','.','.','.',    '...','!','?']
     own = ['his','her','my','your','their','its','our']
+    pre = ['perhaps','perhaps','perhaps','perhaps','perhaps',    'maybe','possibly']
 
 
 
@@ -72,13 +73,16 @@ def base_vars():
     are_am_is = ['verbing','verbing','verbing',   'AMadjective','AMadjective','AMadjective',   'a','amount','the noun','locations','locationsS','from','going to','peopleX','pronounX','PNownerships','PNownershipE','ownerships','ownershipE']
     stem = ['ext','ext','ext',   'pronoun','pronounI','pronounA','pronoun is','people','adjective PNAs','plur noun are','the noun is','a _','amount START','location is','locationsS are','answer','ownership','PNownership']
     ext = stem.copy()
-    ext.remove('ext')
+    ext.remove('answer')
+    while 'ext' in ext:
+        ext.remove('ext')
     stem2 = stem.copy()
     stem2.remove('answer')
     end = ['punct','punct','punct','com']
 
     return {
-        'ext': ['perhaps','perhaps','perhaps','perhaps','perhaps',    'maybe','possibly'],
+        'ext': pre,
+        'ext2': pre,
         'ownership': own,
         'PNownership': propnoun_own,
         'ownershipE': own,

@@ -82,12 +82,12 @@ def nextlet(c):
             teext += answer[len(teext)]
         except IndexError: return
         ans.configure(text=teext)
-        if (len(teext) % 20) == 0:
+        if (len(teext) % 10) == 0:
             img.configure(image=images['def'])
-        elif (len(teext) % 10) == 0:
+        elif (len(teext) % 5) == 0:
             img.configure(image=images['talk'])
         if not (len(teext) == len(answer)):
-            root.after(5,lambda:nextlet(c))
+            root.after(10,lambda:nextlet(c))
         else: img.configure(image=images['def'])
         root.update_idletasks()
 

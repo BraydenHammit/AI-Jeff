@@ -14,7 +14,9 @@ words, structure = base_vars()
 images = {
     'def': tk.PhotoImage(file='images/default.png').subsample(3,3),
     'talk': tk.PhotoImage(file='images/talking.png').subsample(3,3),
-    'blk': tk.PhotoImage(file='images/blink.png').subsample(3,3)
+    'blk': tk.PhotoImage(file='images/blink.png').subsample(3,3),
+    'r': tk.PhotoImage(file='images/right.png').subsample(3,3),
+    'l': tk.PhotoImage(file='images/left.png').subsample(3,3),
 }
 
 def r(_=None):
@@ -93,12 +95,22 @@ def nextlet(c):
 
 def blink():
     global blink_state, repitition
-    repitition += 1
     if blink_state == 'o':
-        blink_state = 'c'
-        img.configure(image=images['blk'])
-        root.after(50 + ((repitition * 2) % 300),blink)
-    elif blink_state == 'c':
+        if frame % 7 == 0:
+            if frame % 2 == 0:
+                blink_state = 'r'
+                img.configure(image=images['r'])
+                root.after(2000 + ((repitition * 75) % 3000),blink)
+            else:
+                blink_state = 'l'
+                img.configure(image=images['l'])
+                root.after(2000 + ((repitition * 75) % 3000),blink)
+        else:
+            blink_state = 'c'
+            img.configure(image=images['blk'])
+            root.after(50 + ((repitition * 2) % 300),blink)
+    elif blink_state == 'c' or blink_state == 'l' or blink_state == 'r':
+        repitition += 1
         blink_state = 'o'
         img.configure(image=images['def'])
         root.after(2800 + ((repitition * 152) % 4000),blink)
@@ -120,6 +132,13 @@ entry.pack(side=tk.LEFT,padx=5)
 ok.pack(side=tk.RIGHT)
 ans = tk.Label(overfrm,text='Jeff answers here!',fg="#b6b118",wraplength=350,justify="left",anchor="w",highlightbackground='grey40',bg='grey40')
 ans.pack(pady=10)
+
+frame = 0
+def frame_upd():
+    global frame
+    frame += 1
+    root.after(10,frame_upd)
+root.after(10,frame_upd)
 
 entry.bind('<Return>',r)
 root.after(2800 + ((repitition * 152) % 4000),blink)

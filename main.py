@@ -116,7 +116,7 @@ def blink():
         root.after(2800 + ((repitition * 152) % 4000),blink)
 
 onesent = tk.BooleanVar()
-check = tk.Checkbutton(root,text="Single Sentence Mode",variable=onesent,highlightbackground='grey40',bg='grey40')
+check = tk.Checkbutton(root,text="Single Sentence Mode",variable=onesent,highlightbackground='grey40',bg='grey40',activebackground='grey40')
 check.place(x=10,y=410)
 img = tk.Label(root,image=images['def'],highlightbackground='grey40',bg='grey40')
 img.place(x=10,y=10)

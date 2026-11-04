@@ -175,7 +175,7 @@ def base_vars():
         'adjective': ['plur noun'],
         'from': ['locations','locationsS'],
         'go to': ['locations','locationsS'],
-        'will': ['verb','gverb','go to'],
+        'will': ['verb','gverb','go to','be'],
         'going to': ['locations','locationsS','gverb','verb','be','go to'],
         'locations': end,
         'locationsS': end,

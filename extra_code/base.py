@@ -8,7 +8,8 @@ def base_vars():
                   'mettalic','acidic','colorlous','odorlous','popular','chunky','lame','disabled','enabled','obtuse','obese','overweight','underweight','acute','right','wrong','demented','clothed','naked','scared','afraid','daunting','burnt','cooked',
                  'cursed','common','rare','uncommon','epic','legendary','mythical','exotic','heroic','real','fake','faulty','functioning','threatening','sleepy','tired','caffeinated','precious','brutal','deadly','rabid','narcissistic',
                  'dangerous','perfect','imperfect','young','old','broken']
-    amount = ['zero','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty one','forty one','sixty seven','some','a couple','a few','all of the']
+    amount = ['zero','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty one','forty one','sixty seven','seven hundred seventy seven','at least five'
+              'some','a couple of','a few','all of the','most of the']
 
     #Nouns:
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',

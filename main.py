@@ -1,6 +1,8 @@
 from extra_code.run import run
 from extra_code.base import base_vars
 import tkinter as tk
+import json
+import os
 
 root = tk.Tk()
 root.title('Jeff the AI')
@@ -9,7 +11,8 @@ root.config(bg='grey40')
 blink_state = 'o'
 repitition = 1
 counter = 0
-words, structure = base_vars()
+if True:#(os.path.getsize('data/words.json') > 0) and (os.path.getsize('data/structure.json') > 0):
+    words, structure = base_vars()
 
 images = {
     'def': tk.PhotoImage(file='images/default.png').subsample(3,3),
@@ -144,3 +147,8 @@ entry.bind('<Return>',r)
 root.after(2800 + ((repitition * 152) % 4000),blink)
 root.update_idletasks()
 root.mainloop()
+
+with open("data/words.json", "w") as file:
+    json.dump(words, file, indent=4)
+with open("data/structure.json", "w") as file:
+    json.dump(structure, file, indent=4)

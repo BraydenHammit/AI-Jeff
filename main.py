@@ -82,6 +82,15 @@ if (os.path.getsize('data/words.json') > 5) and (os.path.getsize('data/structure
                 words[key1].append(val1)
             if not (val2 in structure[key2]):
                 structure[key2].append(val2)
+    for key1, key2 in zip(words,structure):
+        for val1, val2 in zip(words[key1], structure[key2]):
+            while not (val1 in ext[key1]):
+                try:words[key1].remove(val1)
+                except:break
+            while not (val2 in extt[key2]):
+                try:structure[key2].remove(val2)
+                except:break
+    save()
 else:
     words, structure = base_vars()
     logs = []

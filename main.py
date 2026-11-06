@@ -117,6 +117,7 @@ def r(_=None):
     ans.configure(text='')
     teext = ''
     voted = False
+    save()
     root.after(5,lambda:nextlet(counter))
 
 def feedback(f=False):
@@ -201,6 +202,7 @@ def loggg():
     log = scrolledtext.ScrolledText(logext, wrap=tk.WORD, width=50, height=10, highlightthickness=2, highlightbackground="black", relief="flat")
     log.insert(tk.INSERT, texxxt)
     log.pack(pady=30,padx=30)
+    log.configure(state='disabled')
     info.configure(text='X',command=closelogs)
 
 def closelogs():

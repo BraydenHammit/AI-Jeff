@@ -22,7 +22,7 @@ def save(b=False):
         root.after(1000,lambda:setbackbutton(b,'s'))
 
 def clear(b=False):
-    global logs, words, structure
+    global logs, words, structure, repitition, counter, frame
     with open('data/structure.json', "w") as f:
         json.dump({}, f, indent=4)
     with open('data/words.json', "w") as f:
@@ -33,6 +33,9 @@ def clear(b=False):
         json.dump([], f, indent=4)
     logs = []
     words, structure = base_vars()
+    repitition = 1
+    counter = 0
+    frame = 0
     save()
     if b:
         b.configure(text='Data has been cleared.')

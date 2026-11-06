@@ -60,6 +60,21 @@ if not os.path.exists(os.path.join(dirr, 'data/logs.json')):
     with open('data/logs.json', "w") as f:
         json.dump([], f, indent=4)
 
+def logadd(text):
+    global logs
+    logs.append(text)
+    try:
+        if logext.winfo_exists():
+            log.configure(state='normal')
+            log.delete("1.0", tk.END)
+            texxxt = ''
+            for line in logs:
+                texxxt += line+'\n\n'
+            log.insert(tk.INSERT, texxxt)
+            log.configure(state='disabled')
+            log.yview(tk.END)
+    except NameError: None
+
 root = tk.Tk()
 root.title('Jeff the AI')
 root.geometry('700x440')
@@ -125,15 +140,15 @@ def r(_=None):
     counter += 1
     _ = onesent.get()
     if not voted:
-        logs.append('[Rating: None]')
-    logs.append(f'User: {entry.get()}')
+        logadd('[Rating: None]')
+    logadd(f'User: {entry.get()}')
     if _ == True:
         answer, ids, wrds = run(entry.get(),words,structure,onesent=True)
-        logs.append('[Single Sentence Mode - On]')
+        logadd('[Single Sentence Mode - On]')
     else:
         answer, ids, wrds = run(entry.get(),words,structure)
-        logs.append('[Single Sentence Mode - Off]')
-    logs.append(f'Jeff: {answer}')
+        logadd('[Single Sentence Mode - Off]')
+    logadd(f'Jeff: {answer}')
     ids.pop(0)
     ids.pop(0)
     ids.pop(0)
@@ -148,7 +163,7 @@ def feedback(f=False):
     previd = 'start'
     voted = True
     vott = 'Bad' if f == False else 'Good' if f == True else 'Neutral'
-    logs.append(f'[Rating: {vott}]')
+    logadd(f'[Rating: {vott}]')
     if f == True:
         for id, word in zip(ids, wrds):
             for _ in range(5):
@@ -213,7 +228,7 @@ def blink():
         root.after(2800 + ((repitition * 152) % 4000),blink)
 
 def loggg():
-    global logext
+    global logext, log
     if logs == []:
         texxxt = '[No logs available.]'
     else:

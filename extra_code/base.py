@@ -8,8 +8,9 @@ def base_vars():
                   'mettalic','acidic','colorlous','odorlous','popular','chunky','lame','disabled','enabled','obtuse','obese','overweight','underweight','acute','right','wrong','demented','clothed','naked','scared','afraid','daunting','burnt','cooked',
                  'cursed','common','rare','uncommon','epic','legendary','mythical','exotic','heroic','real','fake','faulty','functioning','threatening','sleepy','tired','caffeinated','precious','brutal','deadly','rabid','narcissistic','unborn','airborne',
                  'dangerous','perfect','imperfect','young','old','broken','organic']
-    amount = ['zero','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty one','forty one','sixty seven','seven hundred seventy seven','at least five',
-              'some','a couple of','a few','all of the','most of the']
+    amount = ['zero','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty one','forty one','sixty seven','sixty nine','seventy three','one hundred',
+              'seven hundred seventy seven',
+              'at least five','some','a couple of','a few','all of the','most of the','an unknown amount of']
     amountO = amount.copy()
     amountO.remove('at least five')
     amountO.remove('some')
@@ -17,6 +18,8 @@ def base_vars():
     amountO.remove('a few')
     amountO.remove('all of the')
     amountO.remove('most of the')
+    amountO.remove('an unknown amount of')
+    amountO.append('unknown amount of')
     
 
     #Nouns:

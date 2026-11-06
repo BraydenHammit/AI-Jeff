@@ -2,6 +2,7 @@ from extra_code.run import run
 from extra_code.base import base_vars
 import tkinter as tk
 from tkinter import scrolledtext
+import platform as plt
 import json
 import os
 
@@ -267,10 +268,15 @@ def loggg():
 def savewindow():
     global wind
     wind = tk.Toplevel(root)
-    wind.geometry('300x170')
+    if plt.system() == 'Linux':
+        wind.geometry('400x250')
+        wind.minsize(400, 200)
+        wind.maxsize(400, 200)
+    else:
+        wind.geometry('300x170')
+        wind.minsize(300, 170)
+        wind.maxsize(300, 170)
     wind.resizable(False, False)
-    wind.minsize(300, 170)
-    wind.maxsize(300, 170)
     wind.config(bg='grey20')
     s = tk.Button(wind,text='Save',command=lambda:save(b=s),fg='black',activeforeground='black',bg='grey40',highlightbackground='grey60')
     c = tk.Button(wind,text='Clear',command=lambda:clear(b=c),fg='black',activeforeground='black',bg='grey40',highlightbackground='grey60')
@@ -319,6 +325,8 @@ def frame_upd():
             if not wind.winfo_exists():
                 saveB.configure(command=savewindow,text='Save')
         except NameError: None
+    if frame % 1753 == 0:
+        save()
 root.after(10,frame_upd)
 
 entry.bind('<Return>',r)

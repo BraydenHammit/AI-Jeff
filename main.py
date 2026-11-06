@@ -4,6 +4,21 @@ import tkinter as tk
 import json
 import os
 
+dirr = os.path.dirname(os.path.abspath(__file__))
+os.makedirs(os.path.join(dirr,'data/'), exist_ok=True)
+
+def save():
+    with open("data/words.json", "w") as file:
+        json.dump(words, file, indent=4)
+    with open("data/structure.json", "w") as file:
+        json.dump(structure, file, indent=4)
+
+if not os.path.exists(os.path.join(dirr, 'data/')):
+    with open('data/structure.json', "w") as f:
+        json.dump(None, f, indent=4)
+    with open('data/words.json', "w") as f:
+        json.dump(None, f, indent=4)
+
 root = tk.Tk()
 root.title('Jeff the AI')
 root.geometry('700x440')
@@ -148,7 +163,4 @@ root.after(2800 + ((repitition * 152) % 4000),blink)
 root.update_idletasks()
 root.mainloop()
 
-with open("data/words.json", "w") as file:
-    json.dump(words, file, indent=4)
-with open("data/structure.json", "w") as file:
-    json.dump(structure, file, indent=4)
+save()

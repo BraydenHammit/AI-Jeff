@@ -10,6 +10,14 @@ def base_vars():
                  'dangerous','perfect','imperfect','young','old','broken','organic']
     amount = ['zero','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty one','forty one','sixty seven','seven hundred seventy seven','at least five'
               'some','a couple of','a few','all of the','most of the']
+    amountO = amount.copy()
+    amount.remove('at least five')
+    amount.remove('some')
+    amount.remove('a couple of')
+    amount.remove('a few')
+    amount.remove('all of the')
+    amount.remove('most of the')
+    
 
     #Nouns:
     nouns = ['cheese','basketball','football','McDonalds','cat','computer','AI','robot','dog','fox','snake','emu','table','emo','eclipse','famine','disease','thing','idea','BitCoin','doohickey','gadget','potato','dollar bill','Barbie doll','bread',
@@ -111,7 +119,7 @@ def base_vars():
         'location is': locations,
         'amount': amount,
         'amount START': amount,
-        'amount owned': amount,
+        'amount owned': amountO,
         'going to': ['going to'],
         'go to': ['go to'],
         'am': ['am','am not'],

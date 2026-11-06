@@ -4,4 +4,5 @@ extra_code/__pycache__/alph.cpython-314.pyc
 /data/
 data/structure.json
 data/words.json
+data/logs.json
 /data

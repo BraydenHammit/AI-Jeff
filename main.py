@@ -211,13 +211,7 @@ def loggg():
     log.insert(tk.INSERT, texxxt)
     log.pack(pady=30,padx=30)
     log.configure(state='disabled')
-    info.configure(text='X',command=closelogs)
-
-def closelogs():
-    logext.destroy()
-    try: info.configure(text='ⓘ')
-    except: info.configure(text='i')
-    info.configure(command=loggg)
+    info.configure(text='X',command=logext.destroy)
 
 def savewindow():
     global wind
@@ -229,11 +223,7 @@ def savewindow():
     s.pack(pady=10)
     c.pack(pady=10)
     w.pack(pady=10)
-    saveB.configure(text='X',command=closesavewindow)
-
-def closesavewindow():
-    wind.destroy()
-    saveB.configure(command=savewindow,text='Save')
+    saveB.configure(text='X',command=wind.destroy)
 
 onesent = tk.BooleanVar()
 check = tk.Checkbutton(root,text="Single Sentence Mode",variable=onesent,highlightbackground='grey40',bg='grey40',activebackground='grey40')

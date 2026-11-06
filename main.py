@@ -29,6 +29,7 @@ def clear(b=False):
         json.dump([], f, indent=4)
     logs = []
     words, structure = base_vars()
+    save()
     if b:
         b.configure(text='Data has been cleared.')
         root.after(1500,lambda:setbackbutton(b,'c'))

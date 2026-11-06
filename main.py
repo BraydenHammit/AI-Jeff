@@ -19,22 +19,24 @@ def save(b=False):
         b.configure(text='Saved!')
 
 def clear(b=False):
+    global logs
     with open('data/structure.json', "w") as f:
-        json.dump(None, f, indent=4)
+        json.dump({}, f, indent=4)
     with open('data/words.json', "w") as f:
-        json.dump(None, f, indent=4)
+        json.dump({}, f, indent=4)
     with open('data/logs.json', "w") as f:
-        json.dump(None, f, indent=4)
+        json.dump([], f, indent=4)
+    logs = []
     if b:
         b.configure(text='Data has been cleared.')
 
 if not os.path.exists(os.path.join(dirr, 'data/')):
     with open('data/structure.json', "w") as f:
-        json.dump(None, f, indent=4)
+        json.dump({}, f, indent=4)
     with open('data/words.json', "w") as f:
-        json.dump(None, f, indent=4)
+        json.dump({}, f, indent=4)
     with open('data/logs.json', "w") as f:
-        json.dump(None, f, indent=4)
+        json.dump([], f, indent=4)
 
 root = tk.Tk()
 root.title('Jeff the AI')
@@ -177,9 +179,12 @@ def blink():
 
 def loggg():
     global logext
-    texxxt = ''
-    for line in logs:
-        texxxt += line+'\n\n'
+    if logs == []:
+        texxxt = '[No logs available.]'
+    else:
+        texxxt = ''
+        for line in logs:
+            texxxt += line+'\n\n'
     logext = tk.Toplevel(root)
     logext.config(bg='grey20')
     log = scrolledtext.ScrolledText(logext, wrap=tk.WORD, width=50, height=10, highlightthickness=2, highlightbackground="black", relief="flat")

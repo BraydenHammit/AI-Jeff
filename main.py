@@ -26,7 +26,18 @@ root.config(bg='grey40')
 blink_state = 'o'
 repitition = 1
 counter = 0
-if True:#(os.path.getsize('data/words.json') > 0) and (os.path.getsize('data/structure.json') > 0):
+if (os.path.getsize('data/words.json') > 0) and (os.path.getsize('data/structure.json') > 0):
+    words = json.load(open('data/words.json'))
+    structure = json.load(open('data/structure.json'))
+
+    ext, extt = base_vars()
+    for key1, key2 in zip(ext, extt):
+        for val1, val2 in zip(ext[key1], extt[key2]):
+            if not (val1 in words[key1]):
+                words[key1].append(val1)
+            if not (val2 in structure[key2]):
+                structure[key2].append(val2)
+else:
     words, structure = base_vars()
 
 images = {
@@ -92,6 +103,7 @@ def feedback(f=False):
     upvote.pack_forget()
     midvote.pack_forget()
     downvote.pack_forget()
+    save()
     vote.configure(text=f"                             Vote: {'Bad' if f == False else 'Good' if f == True else 'Neutral'}                             ",fg=('red' if f == False else 'lime' if f == True else "#ddff00"))
     vote.pack()
 

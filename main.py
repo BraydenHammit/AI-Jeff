@@ -128,6 +128,7 @@ else:
     repitition = 1
     counter = 0
     frame = 0
+countstart = counter
 
 images = {
     'def': tk.PhotoImage(file='images/default.png').subsample(3,3),
@@ -139,7 +140,7 @@ images = {
 
 def r(_=None):
     global teext, answer, counter, ids, wrds, feedbackfrm, upvote, downvote, midvote, vote, voted
-    if counter == 0:
+    if counter == countstart:
         feedbackfrm = tk.Frame(root,highlightbackground='grey40',bg='grey40')
         upvote = tk.Button(feedbackfrm,text='Good',command=lambda:feedback(f=True),fg='green',highlightbackground='grey40',bg='grey60')
         midvote = tk.Button(feedbackfrm,text='Mid',command=lambda:feedback(None),highlightbackground='grey40',bg='grey60',fg="#e5e21a")

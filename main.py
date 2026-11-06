@@ -15,6 +15,8 @@ def save(b=False):
         json.dump(structure, file, indent=4)
     with open("data/logs.json", "w") as file:
         json.dump(logs, file, indent=4)
+    with open("data/numbers.json", "w") as file:
+        json.dump([repitition,counter,frame], file, indent=4)
     if b:
         b.configure(text='Saved!')
         root.after(1000,lambda:setbackbutton(b,'s'))
@@ -26,6 +28,8 @@ def clear(b=False):
     with open('data/words.json', "w") as f:
         json.dump({}, f, indent=4)
     with open('data/logs.json', "w") as f:
+        json.dump([], f, indent=4)
+    with open('data/numbers.json', "w") as f:
         json.dump([], f, indent=4)
     logs = []
     words, structure = base_vars()
@@ -49,6 +53,8 @@ if not os.path.exists(os.path.join(dirr, 'data/')):
         json.dump({}, f, indent=4)
     with open('data/logs.json', "w") as f:
         json.dump([], f, indent=4)
+    with open('data/numbers.json', "w") as f:
+        json.dump([], f, indent=4)
 
 if not os.path.exists(os.path.join(dirr, 'data/structure.json')):
     with open('data/structure.json', "w") as f:
@@ -58,6 +64,9 @@ if not os.path.exists(os.path.join(dirr, 'data/words.json')):
         json.dump({}, f, indent=4)
 if not os.path.exists(os.path.join(dirr, 'data/logs.json')):
     with open('data/logs.json', "w") as f:
+        json.dump([], f, indent=4)
+if not os.path.exists(os.path.join(dirr, 'data/numbers.json')):
+    with open('data/numbers.json', "w") as f:
         json.dump([], f, indent=4)
 
 def logadd(text):
@@ -83,12 +92,14 @@ root.minsize(700, 440)
 root.maxsize(700, 440)
 root.config(bg='grey40')
 blink_state = 'o'
-repitition = 1
-counter = 0
-if (os.path.getsize('data/words.json') > 5) and (os.path.getsize('data/structure.json') > 5) and (os.path.getsize('data/logs.json') > 5):
+if (os.path.getsize('data/words.json') > 2) and (os.path.getsize('data/structure.json') > 2) and (os.path.getsize('data/logs.json') > 2) and (os.path.getsize('data/numbers.json') > 2):
     words = json.load(open('data/words.json'))
     structure = json.load(open('data/structure.json'))
     logs = json.load(open('data/logs.json'))
+    nums = json.load(open('data/numbers.json'))
+    repitition = nums[0]
+    counter = nums[1]
+    frame = nums[2]
     ext, extt = base_vars()
     voted = False
     for key1, key2 in zip(ext, extt):
@@ -110,6 +121,9 @@ else:
     words, structure = base_vars()
     logs = []
     voted = 'xqc'
+    repitition = 1
+    counter = 0
+    frame = 0
 
 images = {
     'def': tk.PhotoImage(file='images/default.png').subsample(3,3),
@@ -287,7 +301,6 @@ ok.pack(side=tk.RIGHT)
 ans = tk.Label(overfrm,text='Jeff answers here!',fg="#b6b118",wraplength=350,justify="left",anchor="w",highlightbackground='grey40',bg='grey40')
 ans.pack(pady=10)
 
-frame = 0
 def frame_upd():
     global frame
     frame += 1

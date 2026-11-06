@@ -35,10 +35,12 @@ def clear(b=False):
         root.after(1500,lambda:setbackbutton(b,'c'))
 
 def setbackbutton(b,type):
-    if type == 's':
-        b.configure(text='Save')
-    elif type == 'c':
-        b.configure(text='Clear')
+    try:
+        if type == 's':
+            b.configure(text='Save')
+        elif type == 'c':
+            b.configure(text='Clear')
+    except: None
 
 if not os.path.exists(os.path.join(dirr, 'data/')):
     with open('data/structure.json', "w") as f:
@@ -221,8 +223,8 @@ def savewindow():
     global wind
     wind = tk.Toplevel(root)
     wind.config(bg='grey20')
-    s = tk.Button(wind,text='Save',command=lambda:save(b=s),fg='black',activeforeground='black',bg='grey40',highlightbackground='grey60',bd=0)
-    c = tk.Button(wind,text='Clear',command=lambda:clear(b=c),fg='black',activeforeground='black',bg='grey40',highlightbackground='grey60',bd=0)
+    s = tk.Button(wind,text='Save',command=lambda:save(b=s),fg='black',activeforeground='black',bg='grey40',highlightbackground='grey60')
+    c = tk.Button(wind,text='Clear',command=lambda:clear(b=c),fg='black',activeforeground='black',bg='grey40',highlightbackground='grey60')
     w = tk.Label(wind,text='WARNING:\nClearing save data will delete all saved information.\nCleared data may not be recoverable.',fg='black',highlightbackground='grey20',bg='grey20')
     s.pack(pady=10)
     c.pack(pady=10)

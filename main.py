@@ -39,6 +39,16 @@ if not os.path.exists(os.path.join(dirr, 'data/')):
     with open('data/logs.json', "w") as f:
         json.dump([], f, indent=4)
 
+if not os.path.exists(os.path.join(dirr, 'data/structure.json')):
+    with open('data/structure.json', "w") as f:
+        json.dump({}, f, indent=4)
+if not os.path.exists(os.path.join(dirr, 'data/words.json')):
+    with open('data/words.json', "w") as f:
+        json.dump({}, f, indent=4)
+if not os.path.exists(os.path.join(dirr, 'data/logs.json')):
+    with open('data/logs.json', "w") as f:
+        json.dump([], f, indent=4)
+
 root = tk.Tk()
 root.title('Jeff the AI')
 root.geometry('700x440')
@@ -46,7 +56,7 @@ root.config(bg='grey40')
 blink_state = 'o'
 repitition = 1
 counter = 0
-if (os.path.getsize('data/words.json') > 0) and (os.path.getsize('data/structure.json') > 0) and (os.path.getsize('data/logs.json') > 0):
+if (os.path.getsize('data/words.json') > 5) and (os.path.getsize('data/structure.json') > 5) and (os.path.getsize('data/logs.json') > 5):
     words = json.load(open('data/words.json'))
     structure = json.load(open('data/structure.json'))
     logs = json.load(open('data/logs.json'))

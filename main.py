@@ -61,6 +61,9 @@ if not os.path.exists(os.path.join(dirr, 'data/logs.json')):
 root = tk.Tk()
 root.title('Jeff the AI')
 root.geometry('700x440')
+root.resizable(False, False)
+root.minsize(700, 440)
+root.maxsize(700, 440)
 root.config(bg='grey40')
 blink_state = 'o'
 repitition = 1

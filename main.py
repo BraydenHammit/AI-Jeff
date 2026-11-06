@@ -1,19 +1,32 @@
 from extra_code.run import run
 from extra_code.base import base_vars
 import tkinter as tk
+from tkinter import scrolledtext
 import json
 import os
 
 dirr = os.path.dirname(os.path.abspath(__file__))
 os.makedirs(os.path.join(dirr,'data/'), exist_ok=True)
 
-def save():
+def save(b=False):
     with open("data/words.json", "w") as file:
         json.dump(words, file, indent=4)
     with open("data/structure.json", "w") as file:
         json.dump(structure, file, indent=4)
     with open("data/logs.json", "w") as file:
         json.dump(logs, file, indent=4)
+    if b:
+        b.configure(text='Saved!')
+
+def clear(b=False):
+    with open('data/structure.json', "w") as f:
+        json.dump(None, f, indent=4)
+    with open('data/words.json', "w") as f:
+        json.dump(None, f, indent=4)
+    with open('data/logs.json', "w") as f:
+        json.dump(None, f, indent=4)
+    if b:
+        b.configure(text='Data has been cleared.')
 
 if not os.path.exists(os.path.join(dirr, 'data/')):
     with open('data/structure.json', "w") as f:
@@ -30,12 +43,12 @@ root.config(bg='grey40')
 blink_state = 'o'
 repitition = 1
 counter = 0
-voted = 'xqc'
 if (os.path.getsize('data/words.json') > 0) and (os.path.getsize('data/structure.json') > 0) and (os.path.getsize('data/logs.json') > 0):
     words = json.load(open('data/words.json'))
     structure = json.load(open('data/structure.json'))
     logs = json.load(open('data/logs.json'))
     ext, extt = base_vars()
+    voted = False
     for key1, key2 in zip(ext, extt):
         for val1, val2 in zip(ext[key1], extt[key2]):
             if not (val1 in words[key1]):
@@ -45,6 +58,7 @@ if (os.path.getsize('data/words.json') > 0) and (os.path.getsize('data/structure
 else:
     words, structure = base_vars()
     logs = []
+    voted = 'xqc'
 
 images = {
     'def': tk.PhotoImage(file='images/default.png').subsample(3,3),
@@ -165,12 +179,12 @@ def loggg():
     global logext
     texxxt = ''
     for line in logs:
-        texxxt += line+'\n'
+        texxxt += line+'\n\n'
     logext = tk.Toplevel(root)
-    scrollbar = tk.Scrollbar(logext)
-    scrollbar.pack()
-    log = tk.Listbox(scrollbar)
-    log.insert('end',texxxt)
+    logext.config(bg='grey20')
+    log = scrolledtext.ScrolledText(logext, wrap=tk.WORD, width=50, height=10, highlightthickness=2, highlightbackground="black", relief="flat")
+    log.insert(tk.INSERT, texxxt)
+    log.pack(pady=30,padx=30)
     info.configure(text='X',command=closelogs)
 
 def closelogs():
@@ -179,6 +193,22 @@ def closelogs():
     except: info.configure(text='i')
     info.configure(command=loggg)
 
+def savewindow():
+    global wind
+    wind = tk.Toplevel(root)
+    wind.config(bg='grey20')
+    s = tk.Button(wind,text='Save',command=lambda:save(b=s),fg='black',activeforeground='black',bg='grey20',highlightbackground='grey20',activebackground='grey20')
+    c = tk.Button(wind,text='Clear',command=lambda:clear(b=c),fg='black',activeforeground='black',bg='grey20',highlightbackground='grey20',activebackground='grey20')
+    w = tk.Label(wind,text='WARNING:\nClearing save data will delete all saved information.\nCleared data may not be recoverable.',fg='black',highlightbackground='grey20',bg='grey20')
+    s.pack(pady=10)
+    c.pack(pady=10)
+    w.pack(pady=10)
+    saveB.configure(text='X',command=closesavewindow)
+
+def closesavewindow():
+    wind.destroy()
+    saveB.configure(saveB=savewindow,text='Save')
+
 onesent = tk.BooleanVar()
 check = tk.Checkbutton(root,text="Single Sentence Mode",variable=onesent,highlightbackground='grey40',bg='grey40',activebackground='grey40')
 check.place(x=10,y=410)
@@ -186,6 +216,8 @@ info = tk.Button(root,command=loggg,fg='black',activeforeground='black',relief="
 try: info.configure(text='ⓘ')
 except: info.configure(text='i')
 info.place(x=640,y=410)
+saveB = tk.Button(root,command=savewindow,text='Save',fg='black',activeforeground='black',relief="flat",overrelief="flat",highlightthickness=0,bd=0,bg='grey40',highlightbackground='grey40',activebackground='grey40')
+saveB.place(x=570,y=410)
 img = tk.Label(root,image=images['def'],highlightbackground='grey40',bg='grey40')
 img.place(x=10,y=10)
 overfrm = tk.Frame(root,highlightbackground='grey40',bg='grey40',width=360)
@@ -212,6 +244,10 @@ def frame_upd():
                 try: info.configure(text='ⓘ')
                 except: info.configure(text='i')
                 info.configure(command=loggg)
+        except NameError: None
+        try:
+            if not wind.winfo_exists():
+                saveB.configure(command=savewindow,text='Save')
         except NameError: None
 root.after(10,frame_upd)
 

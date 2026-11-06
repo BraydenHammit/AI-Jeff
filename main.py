@@ -19,7 +19,7 @@ def save(b=False):
         b.configure(text='Saved!')
 
 def clear(b=False):
-    global logs
+    global logs, words, structure
     with open('data/structure.json', "w") as f:
         json.dump({}, f, indent=4)
     with open('data/words.json', "w") as f:
@@ -27,6 +27,7 @@ def clear(b=False):
     with open('data/logs.json', "w") as f:
         json.dump([], f, indent=4)
     logs = []
+    words, structure = base_vars()
     if b:
         b.configure(text='Data has been cleared.')
 

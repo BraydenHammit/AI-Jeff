@@ -12,11 +12,15 @@ def save():
         json.dump(words, file, indent=4)
     with open("data/structure.json", "w") as file:
         json.dump(structure, file, indent=4)
+    with open("data/logs.json", "w") as file:
+        json.dump(logs, file, indent=4)
 
 if not os.path.exists(os.path.join(dirr, 'data/')):
     with open('data/structure.json', "w") as f:
         json.dump(None, f, indent=4)
     with open('data/words.json', "w") as f:
+        json.dump(None, f, indent=4)
+    with open('data/logs.json', "w") as f:
         json.dump(None, f, indent=4)
 
 root = tk.Tk()
@@ -26,10 +30,11 @@ root.config(bg='grey40')
 blink_state = 'o'
 repitition = 1
 counter = 0
-if (os.path.getsize('data/words.json') > 0) and (os.path.getsize('data/structure.json') > 0):
+voted = 'xqc'
+if (os.path.getsize('data/words.json') > 0) and (os.path.getsize('data/structure.json') > 0) and (os.path.getsize('data/logs.json') > 0):
     words = json.load(open('data/words.json'))
     structure = json.load(open('data/structure.json'))
-
+    logs = json.load(open('data/logs.json'))
     ext, extt = base_vars()
     for key1, key2 in zip(ext, extt):
         for val1, val2 in zip(ext[key1], extt[key2]):
@@ -39,6 +44,7 @@ if (os.path.getsize('data/words.json') > 0) and (os.path.getsize('data/structure
                 structure[key2].append(val2)
 else:
     words, structure = base_vars()
+    logs = []
 
 images = {
     'def': tk.PhotoImage(file='images/default.png').subsample(3,3),
@@ -49,7 +55,7 @@ images = {
 }
 
 def r(_=None):
-    global teext, answer, counter, ids, wrds, feedbackfrm, upvote, downvote, midvote, vote
+    global teext, answer, counter, ids, wrds, feedbackfrm, upvote, downvote, midvote, vote, voted
     if counter == 0:
         feedbackfrm = tk.Frame(root,highlightbackground='grey40',bg='grey40')
         upvote = tk.Button(feedbackfrm,text='Good',command=lambda:feedback(f=True),fg='green',highlightbackground='grey40',bg='grey60')
@@ -68,20 +74,30 @@ def r(_=None):
         except:None
     counter += 1
     _ = onesent.get()
+    if not voted:
+        logs.append('[Rating: None]')
+    logs.append(f'User: {entry.get()}')
     if _ == True:
         answer, ids, wrds = run(entry.get(),words,structure,onesent=True)
+        logs.append('[Single Sentence Mode - On]')
     else:
         answer, ids, wrds = run(entry.get(),words,structure)
+        logs.append('[Single Sentence Mode - Off]')
+    logs.append(f'Jeff: {answer}')
     ids.pop(0)
     ids.pop(0)
     ids.pop(0)
     ans.configure(text='')
     teext = ''
+    voted = False
     root.after(5,lambda:nextlet(counter))
 
 def feedback(f=False):
-    global ids, wrds
+    global ids, wrds, voted
     previd = 'start'
+    voted = True
+    vott = 'Bad' if f == False else 'Good' if f == True else 'Neutral'
+    logs.append(f'[Rating: {vott}]')
     if f == True:
         for id, word in zip(ids, wrds):
             for _ in range(5):
@@ -104,7 +120,7 @@ def feedback(f=False):
     midvote.pack_forget()
     downvote.pack_forget()
     save()
-    vote.configure(text=f"                             Vote: {'Bad' if f == False else 'Good' if f == True else 'Neutral'}                             ",fg=('red' if f == False else 'lime' if f == True else "#ddff00"))
+    vote.configure(text=f"                             Vote: {vott}                             ",fg=('red' if f == False else 'lime' if f == True else "#ddff00"))
     vote.pack()
 
 def nextlet(c):
@@ -145,9 +161,31 @@ def blink():
         img.configure(image=images['def'])
         root.after(2800 + ((repitition * 152) % 4000),blink)
 
+def loggg():
+    global logext
+    texxxt = ''
+    for line in logs:
+        texxxt += line+'\n'
+    logext = tk.Toplevel(root)
+    scrollbar = tk.Scrollbar(logext)
+    scrollbar.pack()
+    log = tk.Listbox(scrollbar)
+    log.insert('end',texxxt)
+    info.configure(text='X',command=closelogs)
+
+def closelogs():
+    logext.destroy()
+    try: info.configure(text='ⓘ')
+    except: info.configure(text='i')
+    info.configure(command=loggg)
+
 onesent = tk.BooleanVar()
 check = tk.Checkbutton(root,text="Single Sentence Mode",variable=onesent,highlightbackground='grey40',bg='grey40',activebackground='grey40')
 check.place(x=10,y=410)
+info = tk.Button(root,command=loggg,fg='black',activeforeground='black',relief="flat",overrelief="flat",highlightthickness=0,bd=0,bg='grey40',highlightbackground='grey40',activebackground='grey40')
+try: info.configure(text='ⓘ')
+except: info.configure(text='i')
+info.place(x=640,y=410)
 img = tk.Label(root,image=images['def'],highlightbackground='grey40',bg='grey40')
 img.place(x=10,y=10)
 overfrm = tk.Frame(root,highlightbackground='grey40',bg='grey40',width=360)
@@ -168,6 +206,13 @@ def frame_upd():
     global frame
     frame += 1
     root.after(10,frame_upd)
+    if frame % 10 == 0:
+        try:
+            if not logext.winfo_exists():
+                try: info.configure(text='ⓘ')
+                except: info.configure(text='i')
+                info.configure(command=loggg)
+        except NameError: None
 root.after(10,frame_upd)
 
 entry.bind('<Return>',r)

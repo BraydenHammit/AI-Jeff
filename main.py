@@ -17,6 +17,7 @@ def save(b=False):
         json.dump(logs, file, indent=4)
     if b:
         b.configure(text='Saved!')
+        root.after(1000,lambda:setbackbutton(b,'s'))
 
 def clear(b=False):
     global logs, words, structure
@@ -30,6 +31,13 @@ def clear(b=False):
     words, structure = base_vars()
     if b:
         b.configure(text='Data has been cleared.')
+        root.after(1500,lambda:setbackbutton(b,'c'))
+
+def setbackbutton(b,type):
+    if type == 's':
+        b.configure(text='Save')
+    elif type == 'c':
+        b.configure(text='Clear')
 
 if not os.path.exists(os.path.join(dirr, 'data/')):
     with open('data/structure.json', "w") as f:
@@ -215,8 +223,8 @@ def savewindow():
     global wind
     wind = tk.Toplevel(root)
     wind.config(bg='grey20')
-    s = tk.Button(wind,text='Save',command=lambda:save(b=s),fg='black',activeforeground='black',bg='grey20',highlightbackground='grey20',activebackground='grey20')
-    c = tk.Button(wind,text='Clear',command=lambda:clear(b=c),fg='black',activeforeground='black',bg='grey20',highlightbackground='grey20',activebackground='grey20')
+    s = tk.Button(wind,text='Save',command=lambda:save(b=s),fg='black',activeforeground='black',bg='grey40',highlightbackground='grey60',bd=0)
+    c = tk.Button(wind,text='Clear',command=lambda:clear(b=c),fg='black',activeforeground='black',bg='grey40',highlightbackground='grey60',bd=0)
     w = tk.Label(wind,text='WARNING:\nClearing save data will delete all saved information.\nCleared data may not be recoverable.',fg='black',highlightbackground='grey20',bg='grey20')
     s.pack(pady=10)
     c.pack(pady=10)
@@ -225,16 +233,16 @@ def savewindow():
 
 def closesavewindow():
     wind.destroy()
-    saveB.configure(saveB=savewindow,text='Save')
+    saveB.configure(command=savewindow,text='Save')
 
 onesent = tk.BooleanVar()
 check = tk.Checkbutton(root,text="Single Sentence Mode",variable=onesent,highlightbackground='grey40',bg='grey40',activebackground='grey40')
 check.place(x=10,y=410)
-info = tk.Button(root,command=loggg,fg='black',activeforeground='black',relief="flat",overrelief="flat",highlightthickness=0,bd=0,bg='grey40',highlightbackground='grey40',activebackground='grey40')
+info = tk.Button(root,command=loggg,fg='black',highlightbackground='grey40',bg='grey60')
 try: info.configure(text='ⓘ')
 except: info.configure(text='i')
 info.place(x=640,y=410)
-saveB = tk.Button(root,command=savewindow,text='Save',fg='black',activeforeground='black',relief="flat",overrelief="flat",highlightthickness=0,bd=0,bg='grey40',highlightbackground='grey40',activebackground='grey40')
+saveB = tk.Button(root,command=savewindow,text='Save',fg='black',highlightbackground='grey40',bg='grey60')
 saveB.place(x=570,y=410)
 img = tk.Label(root,image=images['def'],highlightbackground='grey40',bg='grey40')
 img.place(x=10,y=10)

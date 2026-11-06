@@ -236,6 +236,10 @@ def loggg():
         for line in logs:
             texxxt += line+'\n\n'
     logext = tk.Toplevel(root)
+    logext.geometry('400x200')
+    logext.resizable(False, False)
+    logext.minsize(400, 200)
+    logext.maxsize(400, 200)
     logext.config(bg='grey20')
     log = scrolledtext.ScrolledText(logext, wrap=tk.WORD, width=50, height=10, highlightthickness=2, highlightbackground="black", relief="flat")
     log.insert(tk.INSERT, texxxt)
@@ -246,6 +250,10 @@ def loggg():
 def savewindow():
     global wind
     wind = tk.Toplevel(root)
+    wind.geometry('300x170')
+    wind.resizable(False, False)
+    wind.minsize(300, 170)
+    wind.maxsize(300, 170)
     wind.config(bg='grey20')
     s = tk.Button(wind,text='Save',command=lambda:save(b=s),fg='black',activeforeground='black',bg='grey40',highlightbackground='grey60')
     c = tk.Button(wind,text='Clear',command=lambda:clear(b=c),fg='black',activeforeground='black',bg='grey40',highlightbackground='grey60')

@@ -23,7 +23,7 @@ def save(b=False):
         root.after(1000,lambda:setbackbutton(b,'s'))
 
 def clear(b=False):
-    global logs, words, structure, repitition, counter, frame
+    global logs, words, structure, repitition, counter, frame, countstart
     with open('data/structure.json', "w") as f:
         json.dump({}, f, indent=4)
     with open('data/words.json', "w") as f:
@@ -36,8 +36,10 @@ def clear(b=False):
     words, structure = base_vars()
     repitition = 1
     counter = 0
+    countstart = 0
     frame = 0
     save()
+    logadd('reset')
     if b:
         b.configure(text='Data has been cleared.')
         root.after(1500,lambda:setbackbutton(b,'c'))
@@ -75,7 +77,8 @@ if not os.path.exists(os.path.join(dirr, 'data/numbers.json')):
 
 def logadd(text):
     global logs
-    logs.append(text)
+    if text != 'reset':
+        logs.append(text)
     try:
         if logext.winfo_exists():
             log.configure(state='normal')

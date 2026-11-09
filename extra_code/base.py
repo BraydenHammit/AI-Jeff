@@ -81,6 +81,11 @@ def base_vars():
     own = ['his','her','my','your','their','its','our']
     pre = ['perhaps','perhaps','perhaps','perhaps','perhaps',    'maybe','possibly']
 
+    #Attributive Nouns:
+    adjANDattnouns = adjectives.copy()
+    for val in nouns:
+        adjANDattnouns.append(val)
+
 
 
     #Structure:
@@ -144,13 +149,13 @@ def base_vars():
         'plur nounO': plur_nouns,
         'plur noun': plur_nouns,
         'plur noun are': plur_nouns,
-        'adjective': adjectives,
-        'adjectiveO': adjectives,
-        'adjectiveOS': adjectives,
-        'adjectiveQ': adjectives,
+        'adjective': adjANDattnouns,
+        'adjectiveO': adjANDattnouns,
+        'adjectiveOS': adjANDattnouns,
+        'adjectiveQ': adjANDattnouns,
         'AMadjective': adjectives,
-        'adjective PNA': adjectives,
-        'adjective PNAs': adjectives,
+        'adjective PNA': adjANDattnouns,
+        'adjective PNAs': adjANDattnouns,
         'punct': punct,
         'com': [','],
         'conjunction': conjunction

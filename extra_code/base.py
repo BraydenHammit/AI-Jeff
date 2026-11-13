@@ -79,7 +79,7 @@ def base_vars():
     conjunction = ['for','and','yet','so','because','or']
     punct = ['.','.','.','.','.','.','.','.','.','.','.',    '...','!','?']
     own = ['his','her','my','your','their','its','our']
-    pre = ['perhaps','perhaps','perhaps','perhaps','perhaps',    'maybe','possibly']
+    pre = ['perhaps','perhaps','perhaps','perhaps',    'maybe']
 
     #Attributive Nouns:
     adjANDattnouns = adjectives.copy()
